@@ -1,0 +1,93 @@
+{
+  "input": {
+    "lc_number": "LC2024-BD-CUR-001",
+    "issue_date": "2024-01-15",
+    "latest_shipment_date": "2024-02-15",
+    "expiry_date": "2024-03-01",
+    "expiry_place": "Dhaka, Bangladesh",
+    "amount": {
+      "value": 75000.00,
+      "currency": "GBP"
+    },
+    "applicant": {
+      "name": "Currency Test Company Ltd.",
+      "address": "House 25, Road 7, Dhanmondi, Dhaka-1205, Bangladesh",
+      "country": "Bangladesh"
+    },
+    "beneficiary": {
+      "name": "UK Exports Limited",
+      "address": "Trade House, London EC1M 6DX, United Kingdom",
+      "country": "United Kingdom"
+    },
+    "unit_price": {
+      "value": 150.00,
+      "currency": "EUR",
+      "unit": "per piece"
+    },
+    "insurance_coverage": {
+      "percentage": "110% of CIF value",
+      "currency": "USD",
+      "covered_amount": 85000
+    },
+    "banking_instructions": {
+      "charges": "All bank charges outside Bangladesh for beneficiary account",
+      "reimbursement_currency": "JPY"
+    },
+    "_test_metadata": {
+      "test_scenario": "Multiple currency inconsistencies in single LC",
+      "bangladesh_rules_tested": ["BD-002", "BD-006"],
+      "expected_failure": "Mixed currencies create foreign exchange complications",
+      "compliance_impact": "high",
+      "business_impact": "Complex FX settlements and potential regulatory issues"
+    }
+  },
+  "expected_output": {
+    "compliance_score": 0.38,
+    "overall_status": "non_compliant",
+    "critical_failures": [
+      {
+        "rule_id": "BD-002",
+        "description": "Currency consistency validation",
+        "status": "fail",
+        "details": "Multiple currencies detected: GBP (main), EUR (unit price), USD (insurance), JPY (reimbursement)",
+        "field_location": "amount.currency",
+        "suggested_fix": "Use consistent currency throughout LC, preferably USD for Bangladesh imports",
+        "severity": "critical",
+        "local_regulation": "Bangladesh Bank foreign exchange regulations"
+      },
+      {
+        "rule_id": "BD-006",
+        "description": "Foreign exchange compliance",
+        "status": "fail",
+        "details": "GBP as main currency requires special approval for Bangladesh imports over $50,000 equivalent",
+        "field_location": "amount",
+        "suggested_fix": "Convert to USD or obtain special FX approval from Bangladesh Bank",
+        "severity": "high",
+        "local_regulation": "Foreign Exchange Regulation Act, 1947"
+      }
+    ],
+    "warnings": [
+      {
+        "rule_id": "FX-RISK-001",
+        "description": "Multi-currency exposure risk",
+        "status": "warning",
+        "details": "Four different currencies create exchange rate exposure and settlement complexity",
+        "suggested_fix": "Consider currency hedging or standardize to single currency"
+      }
+    ],
+    "validation_summary": {
+      "total_rules_checked": 15,
+      "passed": 8,
+      "failed": 6,
+      "warnings": 1
+    },
+    "error_summary": {
+      "critical_errors": 1,
+      "high_priority_errors": 1,
+      "medium_priority_errors": 2,
+      "minor_errors": 2,
+      "total_errors": 6,
+      "error_categories": ["currency_compliance", "forex_regulation", "settlement_risk"]
+    }
+  }
+}

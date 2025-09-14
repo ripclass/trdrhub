@@ -1,0 +1,78 @@
+{
+  "scenario_name": "LC Expired",
+  "description": "Letter of Credit has already expired - critical validation failure",
+  "documents": [
+    {
+      "document_type": "letter_of_credit",
+      "ocr_confidence": 0.96,
+      "processing_time_ms": 1000,
+      "full_text": "IRREVOCABLE LETTER OF CREDIT\nLC NUMBER: LC2023009999\nISSUE DATE: 15/11/2023\nEXPIRY DATE: 15/12/2023\nAMOUNT: USD 75,000.00\nAPPLICANT: Old Business Ltd, Dhaka, Bangladesh\nBENEFICIARY: Reliable Exports Pvt Ltd, Delhi, India\nPORT OF LOADING: Chittagong\nPORT OF DISCHARGE: JNPT Mumbai\nLAST SHIPMENT DATE: 10/12/2023",
+      "extracted_fields": [
+        {
+          "field_name": "lc_number",
+          "field_type": "text",
+          "value": "LC2023009999",
+          "confidence": 0.98,
+          "raw_text": "LC NUMBER: LC2023009999"
+        },
+        {
+          "field_name": "issue_date",
+          "field_type": "date",
+          "value": "15/11/2023",
+          "confidence": 0.97,
+          "raw_text": "ISSUE DATE: 15/11/2023"
+        },
+        {
+          "field_name": "expiry_date",
+          "field_type": "date",
+          "value": "15/12/2023",
+          "confidence": 0.98,
+          "raw_text": "EXPIRY DATE: 15/12/2023"
+        },
+        {
+          "field_name": "lc_amount",
+          "field_type": "amount",
+          "value": "$75,000.00",
+          "confidence": 0.99,
+          "raw_text": "AMOUNT: USD 75,000.00"
+        },
+        {
+          "field_name": "applicant",
+          "field_type": "party",
+          "value": "Old Business Ltd, Dhaka, Bangladesh",
+          "confidence": 0.95,
+          "raw_text": "APPLICANT: Old Business Ltd, Dhaka, Bangladesh"
+        },
+        {
+          "field_name": "beneficiary",
+          "field_type": "party",
+          "value": "Reliable Exports Pvt Ltd, Delhi, India",
+          "confidence": 0.96,
+          "raw_text": "BENEFICIARY: Reliable Exports Pvt Ltd, Delhi, India"
+        },
+        {
+          "field_name": "port_of_loading",
+          "field_type": "port",
+          "value": "Chittagong",
+          "confidence": 0.94,
+          "raw_text": "PORT OF LOADING: Chittagong"
+        },
+        {
+          "field_name": "port_of_discharge",
+          "field_type": "port",
+          "value": "JNPT Mumbai",
+          "confidence": 0.93,
+          "raw_text": "PORT OF DISCHARGE: JNPT Mumbai"
+        }
+      ]
+    }
+  ],
+  "expected_discrepancies": 1,
+  "expected_critical_issues": 1,
+  "expected_major_issues": 0,
+  "expected_minor_issues": 0,
+  "simulate_ocr_failure": false,
+  "simulate_storage_failure": false,
+  "tags": ["expired", "critical", "date_validation"],
+  "notes": "LC expired in December 2023. This tests the critical FF001 rule that checks if LC expiry date is in the future."
+}

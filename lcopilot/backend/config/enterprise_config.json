@@ -1,0 +1,107 @@
+{
+  "environments": {
+    "staging": {
+      "aws_account_id": "111111111111",
+      "aws_profile": "lcopilot-staging",
+      "aws_region": "eu-north-1",
+      "alarm_threshold": 3,
+      "log_retention_days": 7,
+      "archive_after_days": 7,
+      "escalation": {
+        "channels": ["slack", "email"],
+        "slack_webhook": "https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX",
+        "email_addresses": ["dev-team@company.com"],
+        "pagerduty_integration_key": null
+      },
+      "cost_controls": {
+        "enable_log_filtering": true,
+        "filter_debug_logs": true,
+        "s3_archive_enabled": true,
+        "s3_bucket": "lcopilot-logs-archive-staging"
+      }
+    },
+    "prod": {
+      "aws_account_id": "222222222222",
+      "aws_profile": "lcopilot-production",
+      "aws_region": "eu-north-1",
+      "alarm_threshold": 5,
+      "log_retention_days": 30,
+      "archive_after_days": 30,
+      "escalation": {
+        "channels": ["pagerduty", "slack", "email"],
+        "slack_webhook": "https://hooks.slack.com/services/T00000000/B00000000/YYYYYYYYYYYYYYYYYYYYYYYY",
+        "email_addresses": ["ops-team@company.com", "oncall@company.com"],
+        "pagerduty_integration_key": "R017XXXXXXXXXXXXXXXXXXXXXXXXXX"
+      },
+      "cost_controls": {
+        "enable_log_filtering": true,
+        "filter_debug_logs": true,
+        "s3_archive_enabled": true,
+        "s3_bucket": "lcopilot-logs-archive-prod"
+      }
+    }
+  },
+  "global_settings": {
+    "metric_namespace": "LCopilot",
+    "alarm_period_seconds": 60,
+    "evaluation_periods": 1,
+    "treat_missing_data": "notBreaching",
+    "enable_anomaly_detection": false,
+    "enable_advanced_log_insights": true,
+    "enable_compliance_checks": true
+  },
+  "future_features": {
+    "anomaly_detection": {
+      "enabled": false,
+      "detector_name": "lcopilot-error-anomaly-{env}",
+      "namespace": "LCopilot",
+      "metric_name": "LCopilotErrorCount-{env}",
+      "dimensions": [],
+      "stat": "Average"
+    },
+    "log_insights": {
+      "enabled": true,
+      "queries": [
+        {
+          "name": "TopErrorTypes",
+          "query": "fields @timestamp, level, message\\n| filter level = \"ERROR\"\\n| stats count() by message\\n| sort count desc\\n| limit 20"
+        },
+        {
+          "name": "ErrorFrequencyByHour",
+          "query": "fields @timestamp, level\\n| filter level = \"ERROR\"\\n| stats count() by bin(5m)\\n| sort @timestamp desc"
+        },
+        {
+          "name": "ServiceErrorBreakdown",
+          "query": "fields @timestamp, level, service, message\\n| filter level = \"ERROR\"\\n| stats count() by service\\n| sort count desc"
+        }
+      ]
+    },
+    "compliance": {
+      "enabled": true,
+      "required_alarms": ["error-spike", "high-latency", "availability"],
+      "retention_policy_check": true,
+      "encryption_check": true
+    }
+  },
+  "ci_cd": {
+    "github_actions": {
+      "terraform_plan_on_pr": true,
+      "cdk_diff_on_pr": true,
+      "auto_deploy_staging": true,
+      "auto_deploy_prod": false,
+      "require_approval_prod": true
+    },
+    "deployment_targets": {
+      "staging": {
+        "branch": "main",
+        "auto_deploy": true
+      },
+      "prod": {
+        "branch": "main",
+        "auto_deploy": false,
+        "require_approval": true,
+        "approval_team": ["ops-team", "security-team"]
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "lc_number": "LC2024-GOLDEN-001",
+  "issue_date": "2024-01-15",
+  "latest_shipment_date": "2024-02-15",
+  "expiry_date": "2024-03-01",
+  "expiry_place": "Counters of the issuing bank, Dhaka, Bangladesh",
+  "amount": {
+    "value": 125000.00,
+    "currency": "USD"
+  },
+  "applicant": {
+    "name": "Golden Imports Limited",
+    "address": "House 25, Road 7, Dhanmondi, Dhaka-1205, Bangladesh",
+    "country": "Bangladesh",
+    "contact": {
+      "email": "finance@goldenimports.bd",
+      "phone": "+880-2-9876543"
+    }
+  },
+  "beneficiary": {
+    "name": "Premium Textiles Manufacturing Co. Ltd.",
+    "address": "Industrial Plot 15, Export Processing Zone, Chennai-600058, India",
+    "country": "India",
+    "contact": {
+      "email": "exports@premiumtextiles.in",
+      "phone": "+91-44-12345678"
+    }
+  },
+  "issuing_bank": {
+    "name": "Dutch-Bangla Bank Limited",
+    "swift_code": "DBBLBDDH",
+    "address": "DB Tower, 42 Gulshan Avenue, Dhaka-1212, Bangladesh",
+    "branch": "Gulshan Corporate Branch"
+  },
+  "advising_bank": {
+    "name": "State Bank of India",
+    "swift_code": "SBININBB251",
+    "address": "International Banking Branch, Chennai-600001, India",
+    "branch": "Anna Salai Branch"
+  },
+  "description_of_goods": "100% Cotton Knitted Fabrics, Single Jersey, 160 GSM, Various Colors as per Buyer's Specification, HS Code: 6006.21.00",
+  "hs_code": "6006.21.00",
+  "quantity": "50,000 meters",
+  "unit_price": {
+    "value": 2.50,
+    "currency": "USD",
+    "unit": "per meter"
+  },
+  "port_of_loading": "Chittagong Port, Bangladesh",
+  "port_of_discharge": "Chennai Port (Madras), India",
+  "final_destination": "Chennai, Tamil Nadu, India",
+  "incoterms": "CFR Chennai",
+  "payment_terms": "At sight against complying documents",
+  "presentation_period": "Documents must be presented within 21 days after shipment date but not later than the expiry date",
+  "partial_shipments": "Allowed",
+  "transshipment": "Allowed",
+  "tolerance": {
+    "amount": "5% plus/minus allowed",
+    "quantity": "10% plus/minus allowed"
+  },
+  "required_documents": [
+    "Commercial Invoice in triplicate signed and dated",
+    "Full set of clean on board ocean Bills of Lading made out to order of issuing bank, blank endorsed, marked freight prepaid",
+    "Detailed Packing List showing gross and net weights, measurements",
+    "Certificate of Origin issued by DCCI (Dhaka Chamber of Commerce & Industry)",
+    "GSP Certificate Form A (if applicable for duty benefits)",
+    "Marine Insurance Policy/Certificate covering CIF value plus 10% for Institute Cargo Clauses (A) and War Risks",
+    "Inspection Certificate issued by SGS or equivalent international inspection agency"
+  ],
+  "special_instructions": [
+    "All documents must be in English language",
+    "Third party documents are acceptable except for invoice and packing list",
+    "Photocopies are acceptable for all documents except Bills of Lading",
+    "All charges outside Bangladesh are for beneficiary's account"
+  ],
+  "insurance_coverage": {
+    "percentage": "110% of CIF value",
+    "clauses": ["Institute Cargo Clauses (A)", "Institute War Clauses"],
+    "currency": "USD"
+  },
+  "certificate_requirements": {
+    "origin": "Certificate of Origin must be issued by DCCI and legalized by Bangladesh Chamber of Commerce",
+    "inspection": "SGS inspection certificate confirming quality and quantity as per contract specifications",
+    "gsp": "GSP Form A to be issued by Export Promotion Bureau of Bangladesh if applicable"
+  },
+  "banking_instructions": {
+    "negotiation": "Documents to be negotiated with advising bank",
+    "reimbursement": "Reimbursement authorized through correspondent banking relationship",
+    "charges": "All banking charges outside Bangladesh for beneficiary's account"
+  },
+  "validity_period": {
+    "lc_validity": "Valid until 2024-03-01",
+    "shipment_validity": "Latest shipment date: 2024-02-15",
+    "presentation_validity": "21 days after shipment but within LC validity"
+  },
+  "trade_terms": {
+    "contract_reference": "Purchase Contract PC-2024-001 dated 2024-01-10",
+    "proforma_invoice": "Proforma Invoice PI-2024-001 dated 2024-01-05",
+    "seasonal_goods": false,
+    "perishable_goods": false
+  },
+  "compliance_metadata": {
+    "ucp_version": "UCP 600",
+    "isbp_applicable": true,
+    "local_regulations": ["Bangladesh Bank regulations", "Export-Import regulations"],
+    "risk_category": "Low",
+    "documentation_complexity": "Standard",
+    "estimated_processing_time": "5-7 business days"
+  },
+  "_test_expectations": {
+    "should_pass_all_ucp600_rules": true,
+    "should_pass_all_isbp_rules": true,
+    "should_pass_bangladesh_local_rules": true,
+    "expected_compliance_score": 1.0,
+    "expected_violations": 0,
+    "test_purpose": "Golden standard for fully compliant Letter of Credit"
+  }
+}

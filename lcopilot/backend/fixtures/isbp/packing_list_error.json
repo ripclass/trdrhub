@@ -1,0 +1,100 @@
+{
+  "input": {
+    "lc_number": "LC2024-ISBP-PL-001",
+    "issue_date": "2024-01-15",
+    "latest_shipment_date": "2024-02-15",
+    "expiry_date": "2024-03-01",
+    "expiry_place": "Dhaka, Bangladesh",
+    "amount": {
+      "value": 125000.00,
+      "currency": "USD"
+    },
+    "applicant": {
+      "name": "ISBP Document Test Ltd.",
+      "address": "Export Processing Zone, Chittagong-4223, Bangladesh",
+      "country": "Bangladesh"
+    },
+    "beneficiary": {
+      "name": "Manufacturing Solutions Inc.",
+      "address": "Industrial Complex, Bangalore-560001, India",
+      "country": "India"
+    },
+    "description_of_goods": "Electronic Components and Accessories, various types and specifications",
+    "hs_code": "8542.31.00",
+    "quantity": "Mixed quantities as per attached specification",
+    "required_documents": [
+      "Commercial Invoice showing detailed breakdown",
+      "Full set of clean on board Bills of Lading",
+      "Detailed Packing List showing weights and dimensions",
+      "Certificate of Origin",
+      "Quality Test Certificate"
+    ],
+    "packing_details": {
+      "total_packages": "50 cartons",
+      "gross_weight": "2,500 kg approximately",
+      "net_weight": "Not specified",
+      "dimensions": "Various sizes",
+      "marking": "As per invoice"
+    },
+    "special_instructions": [
+      "Packing list must show exact quantities and part numbers",
+      "Each package to be numbered sequentially",
+      "Weight and dimensions must be clearly stated"
+    ],
+    "_test_metadata": {
+      "test_scenario": "Inadequate packing list details violating ISBP standards",
+      "isbp_rules_tested": ["ISBP A16", "Document examination standards"],
+      "expected_failure": "Packing list lacks required detail for proper examination",
+      "compliance_impact": "medium",
+      "business_impact": "Document discrepancy may delay payment or cause rejection"
+    }
+  },
+  "expected_output": {
+    "compliance_score": 0.68,
+    "overall_status": "discrepant",
+    "critical_failures": [
+      {
+        "rule_id": "ISBP-A16",
+        "description": "Packing list adequacy validation",
+        "status": "fail",
+        "details": "Packing list lacks specific net weight, uses vague descriptions ('approximately', 'various sizes')",
+        "field_location": "packing_details",
+        "suggested_fix": "Provide exact net weight, specific dimensions for each package type",
+        "severity": "medium",
+        "isbp_reference": "ISBP A16 - Packing list examination"
+      },
+      {
+        "rule_id": "ISBP-DOC-001",
+        "description": "Document consistency validation",
+        "status": "fail",
+        "details": "Quantity description 'Mixed quantities as per attached specification' is too vague",
+        "field_location": "quantity",
+        "suggested_fix": "Specify exact quantities for each item or reference detailed breakdown",
+        "severity": "medium",
+        "isbp_reference": "ISBP general principles - specific information required"
+      }
+    ],
+    "warnings": [
+      {
+        "rule_id": "ISBP-BEST-001",
+        "description": "Document presentation best practices",
+        "status": "warning",
+        "details": "Marking description 'As per invoice' may cause confusion during examination",
+        "suggested_fix": "Provide specific marking details or clear reference system"
+      }
+    ],
+    "validation_summary": {
+      "total_rules_checked": 14,
+      "passed": 10,
+      "failed": 3,
+      "warnings": 1
+    },
+    "error_summary": {
+      "critical_errors": 0,
+      "medium_priority_errors": 2,
+      "minor_errors": 1,
+      "total_errors": 3,
+      "error_categories": ["document_adequacy", "isbp_compliance", "presentation_standards"]
+    }
+  }
+}

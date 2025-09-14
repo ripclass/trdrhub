@@ -1,0 +1,12 @@
+{
+  "customer_id": "test-customer-123",
+  "tier": "TierType.PRO",
+  "current_month": "2025-09",
+  "current_day": "2025-09-14",
+  "checks_this_month": 1,
+  "checks_today": 1,
+  "total_lifetime_checks": 1,
+  "last_check_timestamp": "2025-09-14T02:14:38.832300+00:00",
+  "registration_date": "2025-09-14T02:14:38.831938+00:00",
+  "upgrade_date": "2025-09-14T02:15:36.747856+00:00"
+}

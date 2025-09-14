@@ -1,0 +1,78 @@
+{
+  "input": {
+    "lc_number": "LC2024-ICC-EXP-001",
+    "issue_date": "2024-01-15",
+    "latest_shipment_date": "2024-01-20",
+    "expiry_date": "2024-01-10",
+    "expiry_place": "Dhaka, Bangladesh",
+    "amount": {
+      "value": 50000.00,
+      "currency": "USD"
+    },
+    "applicant": {
+      "name": "Expired LC Test Company",
+      "address": "Test Address, Dhaka-1000, Bangladesh",
+      "country": "Bangladesh"
+    },
+    "beneficiary": {
+      "name": "Export Test Company",
+      "address": "Export Address, Chennai-600001, India",
+      "country": "India"
+    },
+    "issuing_bank": {
+      "name": "Test Bank Limited",
+      "swift_code": "TESTBDDH",
+      "address": "Test Branch, Dhaka, Bangladesh"
+    },
+    "description_of_goods": "Test Goods for Date Validation",
+    "hs_code": "1234.56.78",
+    "payment_terms": "At sight",
+    "presentation_period": "Documents must be presented within 21 days after shipment date",
+    "_test_metadata": {
+      "test_scenario": "LC with expiry date before issue and shipment dates",
+      "icc_rules_tested": ["UCP600 Article 6.d.i", "Date logic validation"],
+      "expected_failure": "Expiry date cannot be before issue date or shipment date",
+      "compliance_impact": "critical",
+      "business_impact": "LC is invalid and cannot be used for trade transactions"
+    }
+  },
+  "expected_output": {
+    "compliance_score": 0.15,
+    "overall_status": "invalid",
+    "critical_failures": [
+      {
+        "rule_id": "UCP600-6",
+        "description": "Date sequence validation",
+        "status": "fail",
+        "details": "Expiry date (2024-01-10) is before issue date (2024-01-15)",
+        "field_location": "expiry_date",
+        "suggested_fix": "Set expiry date to be after issue date and provide sufficient time for shipment",
+        "severity": "critical",
+        "icc_reference": "UCP600 Article 6.d.i"
+      },
+      {
+        "rule_id": "DATE-LOGIC-001",
+        "description": "Shipment date logic validation",
+        "status": "fail",
+        "details": "Latest shipment date (2024-01-20) is after expiry date (2024-01-10)",
+        "field_location": "latest_shipment_date",
+        "suggested_fix": "Ensure expiry date is after latest shipment date",
+        "severity": "critical",
+        "icc_reference": "UCP600 logical date requirements"
+      }
+    ],
+    "warnings": [],
+    "validation_summary": {
+      "total_rules_checked": 10,
+      "passed": 2,
+      "failed": 8,
+      "warnings": 0
+    },
+    "error_summary": {
+      "critical_errors": 2,
+      "minor_errors": 6,
+      "total_errors": 8,
+      "error_categories": ["date_logic", "document_validity"]
+    }
+  }
+}

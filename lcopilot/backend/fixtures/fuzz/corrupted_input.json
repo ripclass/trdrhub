@@ -1,0 +1,122 @@
+{
+  "input": {
+    "lc_number": null,
+    "issue_date": "invalid-date-format",
+    "latest_shipment_date": 20240215,
+    "expiry_date": "",
+    "expiry_place": 123456,
+    "amount": "not-a-number",
+    "applicant": null,
+    "beneficiary": {
+      "name": "",
+      "address": null,
+      "country": 999
+    },
+    "issuing_bank": {
+      "name": "Test Bank",
+      "swift_code": "INVALID_SWIFT_CODE_TOO_LONG",
+      "address": ""
+    },
+    "description_of_goods": "",
+    "hs_code": "INVALID-HS-CODE-FORMAT-VERY-LONG-STRING",
+    "quantity": -500,
+    "unit_price": {
+      "value": "not-numeric",
+      "currency": "INVALID_CURRENCY_CODE",
+      "unit": null
+    },
+    "port_of_loading": "",
+    "port_of_discharge": null,
+    "final_destination": 12345,
+    "incoterms": "INVALID_INCOTERM",
+    "payment_terms": null,
+    "presentation_period": "",
+    "partial_shipments": "maybe",
+    "transshipment": 1,
+    "tolerance": null,
+    "required_documents": "not-an-array",
+    "malformed_field": {
+      "nested": {
+        "deeply": {
+          "invalid": null
+        }
+      }
+    },
+    "unicode_test": "Test with émojis 🚢 and spéciâl chàracters",
+    "extremely_long_field": "This is an extremely long field that should test the system's ability to handle very long strings without crashing or causing memory issues. " + "Lorem ipsum dolor sit amet. " * 100,
+    "_test_metadata": {
+      "test_scenario": "Corrupted and malformed LC input for robustness testing",
+      "fuzz_categories": [
+        "null_values",
+        "type_mismatches",
+        "invalid_formats",
+        "missing_required_fields",
+        "extreme_values",
+        "unicode_handling"
+      ],
+      "expected_behavior": "Engine should handle gracefully without crashing",
+      "compliance_impact": "n/a - testing system resilience",
+      "business_impact": "System should provide clear error messages for invalid inputs"
+    }
+  },
+  "expected_output": {
+    "compliance_score": 0.0,
+    "overall_status": "invalid_input",
+    "processing_result": "handled_gracefully",
+    "critical_failures": [
+      {
+        "rule_id": "INPUT-VALIDATION-001",
+        "description": "Input format validation",
+        "status": "fail",
+        "details": "Multiple input format errors detected",
+        "field_location": "multiple_fields",
+        "suggested_fix": "Please check LC data format and required fields",
+        "severity": "critical",
+        "error_category": "input_validation"
+      }
+    ],
+    "input_errors": [
+      {
+        "field": "lc_number",
+        "error": "Required field is null",
+        "error_code": "ERR-VAL-001"
+      },
+      {
+        "field": "issue_date",
+        "error": "Invalid date format",
+        "error_code": "ERR-VAL-002"
+      },
+      {
+        "field": "amount",
+        "error": "Amount must be a number",
+        "error_code": "ERR-VAL-003"
+      },
+      {
+        "field": "applicant",
+        "error": "Required applicant information is missing",
+        "error_code": "ERR-VAL-004"
+      },
+      {
+        "field": "unit_price.currency",
+        "error": "Invalid currency code format",
+        "error_code": "ERR-VAL-005"
+      }
+    ],
+    "validation_summary": {
+      "total_rules_checked": 5,
+      "passed": 0,
+      "failed": 5,
+      "warnings": 0,
+      "input_validation_errors": 15,
+      "processing_time_ms": 10
+    },
+    "error_summary": {
+      "critical_errors": 1,
+      "input_validation_errors": 15,
+      "total_errors": 16,
+      "error_categories": ["input_validation", "data_integrity", "format_validation"],
+      "system_behavior": "graceful_degradation",
+      "recovery_actions": ["input_sanitization", "error_reporting", "safe_fallback"]
+    }
+  }
+}

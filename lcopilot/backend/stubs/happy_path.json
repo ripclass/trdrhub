@@ -1,0 +1,171 @@
+{
+  "scenario_name": "Happy Path - Perfect Match",
+  "description": "All three documents with perfectly matching Fatal Four elements - no discrepancies expected",
+  "documents": [
+    {
+      "document_type": "letter_of_credit",
+      "ocr_confidence": 0.95,
+      "processing_time_ms": 1200,
+      "full_text": "IRREVOCABLE LETTER OF CREDIT\nLC NUMBER: LC2024001234\nISSUE DATE: 15/01/2024\nEXPIRY DATE: 15/06/2024\nAMOUNT: USD 50,000.00\nAPPLICANT: Global Imports Ltd, Mumbai, India\nBENEFICIARY: Quality Exports Inc, Singapore\nPORT OF LOADING: Singapore Port\nPORT OF DISCHARGE: Mumbai Port\nLAST SHIPMENT DATE: 01/06/2024",
+      "extracted_fields": [
+        {
+          "field_name": "lc_number",
+          "field_type": "text",
+          "value": "LC2024001234",
+          "confidence": 0.98,
+          "raw_text": "LC NUMBER: LC2024001234"
+        },
+        {
+          "field_name": "issue_date",
+          "field_type": "date",
+          "value": "15/01/2024",
+          "confidence": 0.97,
+          "raw_text": "ISSUE DATE: 15/01/2024"
+        },
+        {
+          "field_name": "expiry_date",
+          "field_type": "date",
+          "value": "15/06/2024",
+          "confidence": 0.97,
+          "raw_text": "EXPIRY DATE: 15/06/2024"
+        },
+        {
+          "field_name": "lc_amount",
+          "field_type": "amount",
+          "value": "$50,000.00",
+          "confidence": 0.99,
+          "raw_text": "AMOUNT: USD 50,000.00"
+        },
+        {
+          "field_name": "applicant",
+          "field_type": "party",
+          "value": "Global Imports Ltd, Mumbai, India",
+          "confidence": 0.94,
+          "raw_text": "APPLICANT: Global Imports Ltd, Mumbai, India"
+        },
+        {
+          "field_name": "beneficiary",
+          "field_type": "party",
+          "value": "Quality Exports Inc, Singapore",
+          "confidence": 0.95,
+          "raw_text": "BENEFICIARY: Quality Exports Inc, Singapore"
+        },
+        {
+          "field_name": "port_of_loading",
+          "field_type": "port",
+          "value": "Singapore Port",
+          "confidence": 0.93,
+          "raw_text": "PORT OF LOADING: Singapore Port"
+        },
+        {
+          "field_name": "port_of_discharge",
+          "field_type": "port",
+          "value": "Mumbai Port",
+          "confidence": 0.92,
+          "raw_text": "PORT OF DISCHARGE: Mumbai Port"
+        }
+      ]
+    },
+    {
+      "document_type": "commercial_invoice",
+      "ocr_confidence": 0.92,
+      "processing_time_ms": 1100,
+      "full_text": "COMMERCIAL INVOICE\nINVOICE NUMBER: INV-2024-5678\nINVOICE DATE: 25/05/2024\nFROM: Quality Exports Inc, Singapore\nTO: Global Imports Ltd, Mumbai, India\nTOTAL AMOUNT: USD 45,000.00\nDESCRIPTION: Electronic Components\nQUANTITY: 1000 units\nSHIPMENT FROM: Singapore Port\nDESTINATION: Mumbai Port",
+      "extracted_fields": [
+        {
+          "field_name": "invoice_number",
+          "field_type": "text",
+          "value": "INV-2024-5678",
+          "confidence": 0.97,
+          "raw_text": "INVOICE NUMBER: INV-2024-5678"
+        },
+        {
+          "field_name": "invoice_date",
+          "field_type": "date",
+          "value": "25/05/2024",
+          "confidence": 0.95,
+          "raw_text": "INVOICE DATE: 25/05/2024"
+        },
+        {
+          "field_name": "invoice_amount",
+          "field_type": "amount",
+          "value": "$45,000.00",
+          "confidence": 0.98,
+          "raw_text": "TOTAL AMOUNT: USD 45,000.00"
+        },
+        {
+          "field_name": "shipper",
+          "field_type": "party",
+          "value": "Quality Exports Inc, Singapore",
+          "confidence": 0.94,
+          "raw_text": "FROM: Quality Exports Inc, Singapore"
+        },
+        {
+          "field_name": "consignee",
+          "field_type": "party",
+          "value": "Global Imports Ltd, Mumbai, India",
+          "confidence": 0.93,
+          "raw_text": "TO: Global Imports Ltd, Mumbai, India"
+        }
+      ]
+    },
+    {
+      "document_type": "bill_of_lading",
+      "ocr_confidence": 0.89,
+      "processing_time_ms": 1300,
+      "full_text": "BILL OF LADING\nB/L NUMBER: BL-2024-9999\nDATE: 28/05/2024\nSHIPPER: Quality Exports Inc, Singapore\nCONSIGNEE: Global Imports Ltd, Mumbai, India\nPORT OF LOADING: Singapore Port\nPORT OF DISCHARGE: Mumbai Port\nDESCRIPTION: Electronic Components - 1000 units\nVESSEL: MV Trade Express\nVOYAGE: TE-2024-25",
+      "extracted_fields": [
+        {
+          "field_name": "bl_number",
+          "field_type": "text",
+          "value": "BL-2024-9999",
+          "confidence": 0.96,
+          "raw_text": "B/L NUMBER: BL-2024-9999"
+        },
+        {
+          "field_name": "bl_date",
+          "field_type": "date",
+          "value": "28/05/2024",
+          "confidence": 0.94,
+          "raw_text": "DATE: 28/05/2024"
+        },
+        {
+          "field_name": "shipper",
+          "field_type": "party",
+          "value": "Quality Exports Inc, Singapore",
+          "confidence": 0.91,
+          "raw_text": "SHIPPER: Quality Exports Inc, Singapore"
+        },
+        {
+          "field_name": "consignee",
+          "field_type": "party",
+          "value": "Global Imports Ltd, Mumbai, India",
+          "confidence": 0.90,
+          "raw_text": "CONSIGNEE: Global Imports Ltd, Mumbai, India"
+        },
+        {
+          "field_name": "port_of_loading",
+          "field_type": "port",
+          "value": "Singapore Port",
+          "confidence": 0.89,
+          "raw_text": "PORT OF LOADING: Singapore Port"
+        },
+        {
+          "field_name": "port_of_discharge",
+          "field_type": "port",
+          "value": "Mumbai Port",
+          "confidence": 0.88,
+          "raw_text": "PORT OF DISCHARGE: Mumbai Port"
+        }
+      ]
+    }
+  ],
+  "expected_discrepancies": 0,
+  "expected_critical_issues": 0,
+  "expected_major_issues": 0,
+  "expected_minor_issues": 0,
+  "simulate_ocr_failure": false,
+  "simulate_storage_failure": false,
+  "tags": ["happy_path", "perfect_match", "no_discrepancies"],
+  "notes": "Perfect scenario with all Fatal Four elements matching across documents. Invoice amount is within LC limit, all dates are valid, parties match correctly, and ports are consistent."
+}
