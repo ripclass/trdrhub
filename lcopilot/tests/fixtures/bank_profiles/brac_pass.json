@@ -1,0 +1,45 @@
+{
+  "description": "LC document that passes BRAC Bank's moderate validation",
+  "bank_code": "BRAC_BANK",
+  "expected_outcome": "compliant",
+  "lc_document": {
+    "lc_number": "BRAC-PASS-001",
+    "issue_date": "2024-01-15",
+    "latest_shipment_date": "2024-02-15",
+    "expiry_date": "2024-03-01",
+    "amount": {
+      "value": 75000,
+      "currency": "USD"
+    },
+    "applicant": {
+      "name": "Modern Import Company Ltd.",
+      "address": "456 Trade Center, Dhaka-1212",
+      "country": "Bangladesh"
+    },
+    "beneficiary": {
+      "name": "Global Export Solutions LLC",
+      "address": "789 Export Plaza, Los Angeles, CA 90210",
+      "country": "USA"
+    },
+    "description_of_goods": "Electronic Equipment, HS Code: 8517.12.00",
+    "hs_code": "8517.12.00",
+    "required_documents": [
+      "Commercial Invoice",
+      "Full Set Bill of Lading",
+      "Packing List",
+      "Certificate of Origin",
+      "Insurance Policy"
+    ],
+    "insurance_coverage": {
+      "percentage": "110%"
+    },
+    "partial_shipments": "Allowed",
+    "transshipment": "Allowed"
+  },
+  "expected_features": [
+    "Balanced rule enforcement",
+    "Business-friendly approach",
+    "Digital processing capability",
+    "Reasonable compliance thresholds"
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "scenario_name": "LC Happy Path",
+  "description": "Successful LC validation with minimal discrepancies - all documents consistent",
+  "documents": [
+    {
+      "document_type": "letter_of_credit",
+      "ocr_confidence": 0.95,
+      "processing_time_ms": 1200,
+      "full_text": "IRREVOCABLE LETTER OF CREDIT\nLC NUMBER: LC2024001234\nISSUE DATE: 15/01/2024\nEXPIRY DATE: 15/03/2024\nAMOUNT: USD 125,000.00\nAPPLICANT: ABC Trading Ltd, Dhaka, Bangladesh\nBENEFICIARY: XYZ Exports Inc, Mumbai, India\nPORT OF LOADING: Chittagong\nPORT OF DISCHARGE: JNPT Mumbai\nLAST SHIPMENT DATE: 28/02/2024",
+      "extracted_fields": [
+        {
+          "field_name": "lc_number",
+          "field_type": "text",
+          "value": "LC2024001234",
+          "confidence": 0.98,
+          "raw_text": "LC NUMBER: LC2024001234"
+        },
+        {
+          "field_name": "issue_date",
+          "field_type": "date",
+          "value": "15/01/2024",
+          "confidence": 0.96,
+          "raw_text": "ISSUE DATE: 15/01/2024"
+        },
+        {
+          "field_name": "expiry_date",
+          "field_type": "date",
+          "value": "15/03/2024",
+          "confidence": 0.97,
+          "raw_text": "EXPIRY DATE: 15/03/2024"
+        },
+        {
+          "field_name": "lc_amount",
+          "field_type": "amount",
+          "value": "$125,000.00",
+          "confidence": 0.99,
+          "raw_text": "AMOUNT: USD 125,000.00"
+        },
+        {
+          "field_name": "applicant",
+          "field_type": "party",
+          "value": "ABC Trading Ltd, Dhaka, Bangladesh",
+          "confidence": 0.94,
+          "raw_text": "APPLICANT: ABC Trading Ltd, Dhaka, Bangladesh"
+        },
+        {
+          "field_name": "beneficiary",
+          "field_type": "party",
+          "value": "XYZ Exports Inc, Mumbai, India",
+          "confidence": 0.95,
+          "raw_text": "BENEFICIARY: XYZ Exports Inc, Mumbai, India"
+        },
+        {
+          "field_name": "port_of_loading",
+          "field_type": "port",
+          "value": "Chittagong",
+          "confidence": 0.93,
+          "raw_text": "PORT OF LOADING: Chittagong"
+        },
+        {
+          "field_name": "port_of_discharge",
+          "field_type": "port",
+          "value": "JNPT Mumbai",
+          "confidence": 0.92,
+          "raw_text": "PORT OF DISCHARGE: JNPT Mumbai"
+        }
+      ]
+    },
+    {
+      "document_type": "commercial_invoice",
+      "ocr_confidence": 0.92,
+      "processing_time_ms": 900,
+      "full_text": "COMMERCIAL INVOICE\nINVOICE NUMBER: INV-2024-5678\nINVOICE DATE: 20/01/2024\nFROM: XYZ Exports Inc, Mumbai, India\nTO: ABC Trading Ltd, Dhaka, Bangladesh\nTOTAL AMOUNT: USD 124,500.00\nDESCRIPTION: Cotton Fabrics\nQUANTITY: 1000 pieces\nSHIPMENT FROM: Chittagong\nDESTINATION: JNPT Mumbai",
+      "extracted_fields": [
+        {
+          "field_name": "invoice_number",
+          "field_type": "text",
+          "value": "INV-2024-5678",
+          "confidence": 0.97,
+          "raw_text": "INVOICE NUMBER: INV-2024-5678"
+        },
+        {
+          "field_name": "invoice_date",
+          "field_type": "date",
+          "value": "20/01/2024",
+          "confidence": 0.95,
+          "raw_text": "INVOICE DATE: 20/01/2024"
+        },
+        {
+          "field_name": "invoice_amount",
+          "field_type": "amount",
+          "value": "$124,500.00",
+          "confidence": 0.98,
+          "raw_text": "TOTAL AMOUNT: USD 124,500.00"
+        },
+        {
+          "field_name": "consignee",
+          "field_type": "party",
+          "value": "ABC Trading Ltd, Dhaka, Bangladesh",
+          "confidence": 0.93,
+          "raw_text": "TO: ABC Trading Ltd, Dhaka, Bangladesh"
+        }
+      ]
+    },
+    {
+      "document_type": "bill_of_lading",
+      "ocr_confidence": 0.89,
+      "processing_time_ms": 1100,
+      "full_text": "BILL OF LADING\nB/L NUMBER: BL-2024-9012\nDATE: 22/01/2024\nSHIPPER: XYZ Exports Inc, Mumbai, India\nCONSIGNEE: ABC Trading Ltd, Dhaka, Bangladesh\nPORT OF LOADING: Chittagong\nPORT OF DISCHARGE: JNPT Mumbai\nDESCRIPTION: Cotton Fabrics - 1000 pieces\nVESSEL: MV Global Trader\nVOYAGE: GT-2024-01",
+      "extracted_fields": [
+        {
+          "field_name": "bl_number",
+          "field_type": "text",
+          "value": "BL-2024-9012",
+          "confidence": 0.96,
+          "raw_text": "B/L NUMBER: BL-2024-9012"
+        },
+        {
+          "field_name": "bl_date",
+          "field_type": "date",
+          "value": "22/01/2024",
+          "confidence": 0.94,
+          "raw_text": "DATE: 22/01/2024"
+        },
+        {
+          "field_name": "shipper",
+          "field_type": "party",
+          "value": "XYZ Exports Inc, Mumbai, India",
+          "confidence": 0.92,
+          "raw_text": "SHIPPER: XYZ Exports Inc, Mumbai, India"
+        },
+        {
+          "field_name": "consignee",
+          "field_type": "party",
+          "value": "ABC Trading Ltd, Dhaka, Bangladesh",
+          "confidence": 0.91,
+          "raw_text": "CONSIGNEE: ABC Trading Ltd, Dhaka, Bangladesh"
+        },
+        {
+          "field_name": "port_of_loading",
+          "field_type": "port",
+          "value": "Chittagong",
+          "confidence": 0.88,
+          "raw_text": "PORT OF LOADING: Chittagong"
+        },
+        {
+          "field_name": "port_of_discharge",
+          "field_type": "port",
+          "value": "JNPT Mumbai",
+          "confidence": 0.87,
+          "raw_text": "PORT OF DISCHARGE: JNPT Mumbai"
+        }
+      ]
+    }
+  ],
+  "expected_discrepancies": 0,
+  "expected_critical_issues": 0,
+  "expected_major_issues": 0,
+  "expected_minor_issues": 0,
+  "simulate_ocr_failure": false,
+  "simulate_storage_failure": false,
+  "tags": ["happy_path", "consistent", "valid"],
+  "notes": "All documents are consistent with each other. Invoice amount is within LC amount. All ports and parties match. Dates are in proper sequence."
+}

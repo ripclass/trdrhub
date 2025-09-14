@@ -1,0 +1,35 @@
+{
+  "lc_number": "LC2024-FREE-001",
+  "issue_date": "2024-01-15",
+  "latest_shipment_date": "2024-02-15",
+  "expiry_date": "2024-03-01",
+  "amount": {
+    "value": 25000.00,
+    "currency": "USD"
+  },
+  "applicant": {
+    "name": "Small Business Ltd",
+    "country": "Bangladesh"
+  },
+  "beneficiary": {
+    "name": "Supplier Co",
+    "country": "India"
+  },
+  "presentation_period": "21 days after shipment",
+  "required_documents": [
+    "Invoice",
+    "Bill of Lading"
+  ],
+  "_test_metadata": {
+    "purpose": "Test free tier functionality with basic violations",
+    "expected_behavior": "Should stop after 3 checks and trigger upsell",
+    "tier": "free",
+    "remaining_free_checks": 3,
+    "expected_violations_found": 2,
+    "should_trigger_upsell": true,
+    "issues": [
+      "Missing expiry place",
+      "Incomplete addresses"
+    ]
+  }
+}

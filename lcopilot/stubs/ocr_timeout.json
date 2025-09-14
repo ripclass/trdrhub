@@ -1,0 +1,22 @@
+{
+  "scenario_name": "OCR Processing Failure",
+  "description": "Simulates OCR service timeout or failure - tests error handling",
+  "documents": [
+    {
+      "document_type": "letter_of_credit",
+      "ocr_confidence": 0.0,
+      "processing_time_ms": 30000,
+      "full_text": "",
+      "error": "OCR service timeout after 30 seconds",
+      "extracted_fields": []
+    }
+  ],
+  "expected_discrepancies": 0,
+  "expected_critical_issues": 0,
+  "expected_major_issues": 0,
+  "expected_minor_issues": 0,
+  "simulate_ocr_failure": true,
+  "simulate_storage_failure": false,
+  "tags": ["ocr_failure", "error_handling", "timeout"],
+  "notes": "Tests OCR failure handling. No validation can be performed due to OCR failure, should gracefully handle the error condition."
+}

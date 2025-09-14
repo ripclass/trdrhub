@@ -1,0 +1,107 @@
+{
+  "input": {
+    "lc_number": "LC2024-BD-INS-001",
+    "issue_date": "2024-01-15",
+    "latest_shipment_date": "2024-02-15",
+    "expiry_date": "2024-03-01",
+    "expiry_place": "Dhaka, Bangladesh",
+    "amount": {
+      "value": 100000.00,
+      "currency": "USD"
+    },
+    "applicant": {
+      "name": "Insurance Test Imports Ltd.",
+      "address": "Commercial Plot 78, Tejgaon I/A, Dhaka-1208, Bangladesh",
+      "country": "Bangladesh"
+    },
+    "beneficiary": {
+      "name": "Machinery Exports International",
+      "address": "Industrial Estate, Pune-411001, India",
+      "country": "India"
+    },
+    "issuing_bank": {
+      "name": "Dutch-Bangla Bank Limited",
+      "swift_code": "DBBLBDDH",
+      "address": "Corporate Branch, Dhaka, Bangladesh"
+    },
+    "description_of_goods": "Industrial Machinery and Equipment, CIF Value",
+    "hs_code": "8421.21.00",
+    "quantity": "5 units",
+    "unit_price": {
+      "value": 20000.00,
+      "currency": "USD",
+      "unit": "per unit"
+    },
+    "incoterms": "CIF Chittagong",
+    "payment_terms": "At sight against complying documents",
+    "insurance_coverage": {
+      "percentage": "95% of CIF value",
+      "clauses": ["Institute Cargo Clauses (B)", "Basic coverage only"],
+      "currency": "USD",
+      "covered_amount": 95000
+    },
+    "required_documents": [
+      "Commercial Invoice",
+      "Bills of Lading",
+      "Packing List",
+      "Insurance Certificate covering 95% of CIF value",
+      "Certificate of Origin"
+    ],
+    "_test_metadata": {
+      "test_scenario": "Insufficient insurance coverage for Bangladesh imports",
+      "bangladesh_rules_tested": ["BD-005", "Insurance requirements"],
+      "expected_failure": "Insurance coverage below required 110% of CIF value",
+      "compliance_impact": "high",
+      "business_impact": "Risk of loss not adequately covered, may face banking issues"
+    }
+  },
+  "expected_output": {
+    "compliance_score": 0.72,
+    "overall_status": "non_compliant",
+    "critical_failures": [
+      {
+        "rule_id": "BD-005",
+        "description": "Insurance coverage adequacy validation",
+        "status": "fail",
+        "details": "Insurance coverage of 95% is below required 110% of CIF value for Bangladesh imports",
+        "field_location": "insurance_coverage.percentage",
+        "suggested_fix": "Increase insurance coverage to minimum 110% of CIF value ($110,000)",
+        "severity": "high",
+        "local_regulation": "Bangladesh Bank foreign exchange guidelines"
+      },
+      {
+        "rule_id": "BD-005-CLAUSE",
+        "description": "Insurance clause adequacy",
+        "status": "fail",
+        "details": "Institute Cargo Clauses (B) provides limited coverage; (A) recommended for machinery",
+        "field_location": "insurance_coverage.clauses",
+        "suggested_fix": "Use Institute Cargo Clauses (A) for comprehensive coverage",
+        "severity": "medium",
+        "local_regulation": "Standard banking practice in Bangladesh"
+      }
+    ],
+    "warnings": [
+      {
+        "rule_id": "RISK-001",
+        "description": "Machinery insurance risk assessment",
+        "status": "warning",
+        "details": "Industrial machinery requires comprehensive insurance coverage including installation risks",
+        "suggested_fix": "Consider additional coverage for installation and commissioning"
+      }
+    ],
+    "validation_summary": {
+      "total_rules_checked": 16,
+      "passed": 11,
+      "failed": 4,
+      "warnings": 1
+    },
+    "error_summary": {
+      "critical_errors": 0,
+      "high_priority_errors": 1,
+      "medium_priority_errors": 1,
+      "minor_errors": 2,
+      "total_errors": 4,
+      "error_categories": ["insurance_coverage", "risk_management"]
+    }
+  }
+}

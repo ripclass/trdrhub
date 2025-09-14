@@ -1,0 +1,117 @@
+{
+  "input": {
+    "lc_number": "LC2024-BD-HS-001",
+    "issue_date": "2024-01-15",
+    "latest_shipment_date": "2024-02-15",
+    "expiry_date": "2024-03-01",
+    "expiry_place": "Dhaka, Bangladesh",
+    "amount": {
+      "value": 85000.00,
+      "currency": "USD"
+    },
+    "applicant": {
+      "name": "Bangladesh HS Code Test Ltd.",
+      "address": "Industrial Plot 45, DEPZ, Savar, Dhaka-1340, Bangladesh",
+      "country": "Bangladesh"
+    },
+    "beneficiary": {
+      "name": "Indian Textile Exports",
+      "address": "Textile Hub, Coimbatore-641001, India",
+      "country": "India"
+    },
+    "issuing_bank": {
+      "name": "Islami Bank Bangladesh Limited",
+      "swift_code": "IBBLBDDH",
+      "address": "Motijheel Branch, Dhaka-1000, Bangladesh"
+    },
+    "advising_bank": {
+      "name": "State Bank of India",
+      "swift_code": "SBININBB",
+      "address": "International Branch, Coimbatore, India"
+    },
+    "description_of_goods": "100% Cotton Woven Fabrics, Plain Weave",
+    "hs_code": "8517.12.00",
+    "quantity": "10,000 meters",
+    "unit_price": {
+      "value": 8.50,
+      "currency": "USD",
+      "unit": "per meter"
+    },
+    "port_of_loading": "Chennai Port, India",
+    "port_of_discharge": "Chittagong Port, Bangladesh",
+    "final_destination": "Dhaka, Bangladesh",
+    "incoterms": "CFR Chittagong",
+    "payment_terms": "At sight against complying documents",
+    "presentation_period": "Documents must be presented within 21 days after shipment date",
+    "product_details": [
+      {
+        "description": "Cotton Woven Fabric - Plain",
+        "quantity": "5,000 meters",
+        "hs_code": "8517.12.00",
+        "value": 42500,
+        "origin": "India"
+      },
+      {
+        "description": "Cotton Woven Fabric - Printed",
+        "quantity": "5,000 meters",
+        "hs_code": "6201.11.00",
+        "value": 42500,
+        "origin": "India"
+      }
+    ],
+    "_test_metadata": {
+      "test_scenario": "HS code mismatch between description and actual classification",
+      "bangladesh_rules_tested": ["BD-003", "Customs classification"],
+      "expected_failure": "HS code 8517.12.00 (telecommunications) doesn't match cotton textiles",
+      "compliance_impact": "high",
+      "business_impact": "Customs clearance issues and potential duty classification errors"
+    }
+  },
+  "expected_output": {
+    "compliance_score": 0.45,
+    "overall_status": "non_compliant",
+    "critical_failures": [
+      {
+        "rule_id": "BD-003",
+        "description": "HS Code product classification validation",
+        "status": "fail",
+        "details": "HS code 8517.12.00 (Telephone sets) does not match described goods (Cotton Textiles)",
+        "field_location": "hs_code",
+        "suggested_fix": "Use correct HS code for cotton woven fabrics: 5208.xx.xx series",
+        "severity": "critical",
+        "local_regulation": "Bangladesh Customs Act and NBR guidelines"
+      },
+      {
+        "rule_id": "BD-003-DETAIL",
+        "description": "Product line item HS code inconsistency",
+        "status": "fail",
+        "details": "Mixed HS codes in product details - 8517.12.00 and 6201.11.00 don't match cotton fabric description",
+        "field_location": "product_details[].hs_code",
+        "suggested_fix": "Use consistent HS codes from Chapter 52 (Cotton) for all items",
+        "severity": "high",
+        "local_regulation": "Bangladesh Customs classification requirements"
+      }
+    ],
+    "warnings": [
+      {
+        "rule_id": "BD-CUSTOMS-001",
+        "description": "Potential duty rate variation",
+        "status": "warning",
+        "details": "Different HS codes may result in different duty rates and clearance procedures",
+        "suggested_fix": "Verify correct classification with customs broker"
+      }
+    ],
+    "validation_summary": {
+      "total_rules_checked": 18,
+      "passed": 12,
+      "failed": 5,
+      "warnings": 1
+    },
+    "error_summary": {
+      "critical_errors": 2,
+      "minor_errors": 3,
+      "total_errors": 5,
+      "error_categories": ["customs_classification", "regulatory_compliance"]
+    }
+  }
+}

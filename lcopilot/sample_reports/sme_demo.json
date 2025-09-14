@@ -1,0 +1,118 @@
+{
+  "report_info": {
+    "title": "LCopilot Monthly Performance Report",
+    "customer": "Demo SME Trading Ltd.",
+    "customer_id": "sme-demo-001",
+    "tier": "Professional",
+    "report_period": {
+      "start": "2025-08-15",
+      "end": "2025-09-14",
+      "days": 30
+    },
+    "generated_at": "2025-09-14T09:10:39.955288",
+    "report_type": "sme_style"
+  },
+  "executive_summary": {
+    "total_validations": 47,
+    "successful_validations": 45,
+    "success_rate": "95.7%",
+    "average_processing_time": "2.3 seconds",
+    "cost_savings_estimate": "$1,850 USD",
+    "key_highlights": [
+      "All validations completed within 5 seconds",
+      "Detected 12 critical compliance issues before submission",
+      "Saved approximately 18 hours of manual review time",
+      "100% uptime during business hours"
+    ]
+  },
+  "performance_metrics": {
+    "validation_breakdown": {
+      "ucp600_compliant": 38,
+      "isbp_compliant": 35,
+      "bangladesh_local_compliant": 41,
+      "multi_standard_compliant": 33
+    },
+    "processing_time_stats": {
+      "fastest_validation": "1.2 seconds",
+      "slowest_validation": "4.1 seconds",
+      "average_time": "2.3 seconds",
+      "within_sla": "100%"
+    },
+    "issue_detection": {
+      "critical_issues_found": 12,
+      "major_issues_found": 28,
+      "minor_issues_found": 15,
+      "warnings_issued": 23,
+      "total_issues_prevented": 78
+    }
+  },
+  "compliance_insights": {
+    "most_common_issues": [
+      {
+        "issue": "Expiry date too close to shipment date",
+        "frequency": 8,
+        "impact": "Medium"
+      },
+      {
+        "issue": "Insurance coverage below 110% CIF",
+        "frequency": 6,
+        "impact": "High"
+      },
+      {
+        "issue": "Incomplete beneficiary address",
+        "frequency": 5,
+        "impact": "Medium"
+      },
+      {
+        "issue": "Missing presentation period",
+        "frequency": 4,
+        "impact": "Low"
+      }
+    ],
+    "compliance_trends": {
+      "improving_areas": [
+        "Documentation completeness",
+        "Date validations"
+      ],
+      "attention_needed": [
+        "Insurance requirements",
+        "Currency specifications"
+      ]
+    }
+  },
+  "cost_benefit_analysis": {
+    "monthly_cost": "$99 USD",
+    "estimated_savings": {
+      "manual_review_time": "$1,200 USD",
+      "rejection_prevention": "$650 USD",
+      "faster_processing": "$200 USD",
+      "total_monthly_savings": "$2,050 USD"
+    },
+    "roi_calculation": {
+      "cost": "$99",
+      "savings": "$2,050",
+      "net_benefit": "$1,951",
+      "roi_percentage": "1,970%"
+    }
+  },
+  "service_quality": {
+    "uptime": "99.9%",
+    "response_time_sla": "< 5 seconds",
+    "response_time_actual": "2.3 seconds",
+    "support_interactions": 2,
+    "support_satisfaction": "5/5 stars",
+    "issues_resolved": "100%"
+  },
+  "recommendations": [
+    "Consider upgrading to Enterprise tier for API access and custom integrations",
+    "Review insurance coverage requirements for Bangladesh imports",
+    "Implement systematic date validation in your LC preparation process",
+    "Take advantage of evidence pack features for audit trail requirements"
+  ],
+  "next_steps": [
+    "Schedule monthly business review",
+    "Explore advanced features training",
+    "Consider volume pricing for additional validations",
+    "Review integration options for your ERP system"
+  ]
+}

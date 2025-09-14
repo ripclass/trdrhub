@@ -1,0 +1,62 @@
+{
+  "lc_number": "LC2024-BD-001",
+  "issue_date": "2024-01-15",
+  "latest_shipment_date": "2024-02-15",
+  "expiry_date": "2024-03-01",
+  "expiry_place": "Chittagong, Bangladesh",
+  "amount": {
+    "value": 75000.00,
+    "currency": "USD"
+  },
+  "applicant": {
+    "name": "Bangladesh Textiles Ltd.",
+    "address": "House 45, Road 12, Banani, Dhaka-1213, Bangladesh",
+    "country": "Bangladesh"
+  },
+  "beneficiary": {
+    "name": "Indian Cotton Mills Pvt Ltd",
+    "address": "Plot 23, Industrial Area, Mumbai-400013, India",
+    "country": "India"
+  },
+  "issuing_bank": {
+    "name": "Islami Bank Bangladesh Limited",
+    "swift_code": "IBBLBDDH",
+    "address": "40 Dilkusha C/A, Dhaka-1000, Bangladesh"
+  },
+  "advising_bank": {
+    "name": "State Bank of India",
+    "swift_code": "SBININBB",
+    "address": "Mumbai Main Branch, India"
+  },
+  "presentation_period": "Documents to be presented within 21 days of shipment date",
+  "required_documents": [
+    "Commercial Invoice in 3 copies",
+    "Packing List",
+    "Clean on Board Bill of Lading",
+    "Certificate of Origin issued by DCCI",
+    "GSP Certificate Form A",
+    "Insurance Certificate covering marine risks"
+  ],
+  "certificate_requirements": "Certificate of Origin to be issued by Dhaka Chamber of Commerce & Industry (DCCI)",
+  "description_of_goods": "100% Cotton Yarn, Count 30s, Ring Spun, Raw White, HS Code: 5205.11.00",
+  "hs_code": "5205.11.00",
+  "port_of_loading": "Chittagong Port, Bangladesh",
+  "port_of_discharge": "JNPT, Mumbai, India",
+  "incoterms": "CFR Mumbai",
+  "payment_terms": "At sight against documents",
+  "insurance_coverage": "110% of invoice value covering All Risks",
+  "partial_shipments": "Not allowed",
+  "transshipment": "Allowed",
+  "_test_metadata": {
+    "purpose": "Bangladesh local banking compliance - should pass all BD rules",
+    "expected_violations": 0,
+    "should_pass_bd_rules": true,
+    "features": [
+      "Correct BD address format with postal code",
+      "Valid HS code format",
+      "DCCI certificate of origin",
+      "Local bank involvement",
+      "GSP Form A included"
+    ]
+  }
+}

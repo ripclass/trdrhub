@@ -1,0 +1,95 @@
+{
+  "input": {
+    "lc_number": "LC2024-ICC-MPP-001",
+    "issue_date": "2024-01-15",
+    "latest_shipment_date": "2024-02-15",
+    "expiry_date": "2024-03-01",
+    "expiry_place": "",
+    "amount": {
+      "value": 75000.00,
+      "currency": "USD"
+    },
+    "applicant": {
+      "name": "Test Import Company Ltd.",
+      "address": "Plot 123, Industrial Area, Dhaka-1230, Bangladesh",
+      "country": "Bangladesh"
+    },
+    "beneficiary": {
+      "name": "Export Solutions Inc.",
+      "address": "456 Trade Center, Mumbai-400001, India",
+      "country": "India"
+    },
+    "issuing_bank": {
+      "name": "Standard Chartered Bangladesh",
+      "swift_code": "SCBLBDDH",
+      "address": "Gulshan Branch, Dhaka, Bangladesh"
+    },
+    "advising_bank": {
+      "name": "HDFC Bank Limited",
+      "swift_code": "HDFCINBB",
+      "address": "Trade Finance Branch, Mumbai, India"
+    },
+    "description_of_goods": "Cotton Textiles, HS Code: 5208.11.00",
+    "hs_code": "5208.11.00",
+    "quantity": "5,000 meters",
+    "unit_price": {
+      "value": 15.00,
+      "currency": "USD",
+      "unit": "per meter"
+    },
+    "port_of_loading": "Mumbai Port, India",
+    "port_of_discharge": "Chittagong Port, Bangladesh",
+    "final_destination": "Dhaka, Bangladesh",
+    "incoterms": "CFR Chittagong",
+    "payment_terms": "At sight against complying documents",
+    "presentation_period": "Documents must be presented within 21 days after shipment date",
+    "partial_shipments": "Not allowed",
+    "transshipment": "Allowed",
+    "tolerance": {
+      "amount": "5% plus/minus allowed",
+      "quantity": "5% plus/minus allowed"
+    },
+    "required_documents": [
+      "Commercial Invoice in triplicate",
+      "Full set of clean on board Bills of Lading",
+      "Packing List",
+      "Certificate of Origin issued by relevant chamber",
+      "Marine Insurance Certificate covering CIF value plus 10%"
+    ],
+    "_test_metadata": {
+      "test_scenario": "Missing presentation place validation",
+      "icc_rules_tested": ["UCP600 Article 6.d.i"],
+      "expected_failure": "Expiry place is required for document presentation",
+      "compliance_impact": "high",
+      "business_impact": "Documents cannot be presented without clear presentation location"
+    }
+  },
+  "expected_output": {
+    "compliance_score": 0.65,
+    "overall_status": "non_compliant",
+    "critical_failures": [
+      {
+        "rule_id": "UCP600-6",
+        "description": "LC expiry place validation",
+        "status": "fail",
+        "details": "Expiry place is missing or empty - documents cannot be presented",
+        "field_location": "expiry_place",
+        "suggested_fix": "Specify a clear presentation place (bank name and location)",
+        "severity": "critical",
+        "icc_reference": "UCP600 Article 6.d.i"
+      }
+    ],
+    "warnings": [],
+    "validation_summary": {
+      "total_rules_checked": 15,
+      "passed": 10,
+      "failed": 4,
+      "warnings": 1
+    },
+    "error_summary": {
+      "critical_errors": 1,
+      "minor_errors": 3,
+      "total_errors": 4
+    }
+  }
+}

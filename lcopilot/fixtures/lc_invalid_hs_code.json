@@ -1,0 +1,125 @@
+{
+  "lc_number": "LC2024-HS-FAIL-001",
+  "issue_date": "2024-01-15",
+  "latest_shipment_date": "2024-02-15",
+  "expiry_date": "2024-03-01",
+  "expiry_place": "Dhaka, Bangladesh",
+  "amount": {
+    "value": 95000.00,
+    "currency": "USD"
+  },
+  "applicant": {
+    "name": "Classification Issues Import Ltd.",
+    "address": "House 15, Road 3, Gulshan-1, Dhaka-1212, Bangladesh",
+    "country": "Bangladesh"
+  },
+  "beneficiary": {
+    "name": "Mixed Goods Export Company",
+    "address": "Export Complex, Block A, Chennai-600001, India",
+    "country": "India"
+  },
+  "issuing_bank": {
+    "name": "Sonali Bank Limited",
+    "swift_code": "SONBBDDH",
+    "address": "Head Office, Dhaka, Bangladesh"
+  },
+  "advising_bank": {
+    "name": "HDFC Bank Limited",
+    "swift_code": "HDFCINBB",
+    "address": "International Trade Branch, Chennai, India"
+  },
+  "description_of_goods": "Mixed Textile Products including Cotton Fabrics, Synthetic Blends, and Garment Accessories",
+  "hs_code": "MIXED",
+  "quantity": "Various quantities as per attached specification",
+  "unit_price": {
+    "value": "Variable",
+    "currency": "USD",
+    "unit": "as per item"
+  },
+  "port_of_loading": "Chennai Port, India",
+  "port_of_discharge": "Chittagong Port, Bangladesh",
+  "final_destination": "Dhaka, Bangladesh",
+  "incoterms": "CIF Chittagong",
+  "payment_terms": "At sight against complying documents",
+  "presentation_period": "Documents must be presented within 21 days after shipment date",
+  "partial_shipments": "Allowed",
+  "transshipment": "Allowed",
+  "tolerance": {
+    "amount": "5% plus/minus allowed",
+    "quantity": "As per individual line items"
+  },
+  "required_documents": [
+    "Commercial Invoice in triplicate with detailed breakdown",
+    "Full set of clean on board Bills of Lading",
+    "Detailed Packing List with individual item specifications",
+    "Certificate of Origin issued by relevant chamber",
+    "GSP Certificate Form A where applicable",
+    "Marine Insurance Certificate covering CIF value plus 10%"
+  ],
+  "special_instructions": [
+    "Invoice must show separate HS codes for each product category",
+    "Packing list must detail quantities and specifications for each item type",
+    "Certificate of origin required for each product classification"
+  ],
+  "insurance_coverage": {
+    "percentage": "110% of CIF value",
+    "clauses": ["Institute Cargo Clauses (A)", "Institute War Clauses"],
+    "currency": "USD"
+  },
+  "certificate_requirements": {
+    "origin": "Certificate of Origin showing accurate commodity classification",
+    "quality": "Quality certificates for each product category where applicable"
+  },
+  "product_breakdown": [
+    {
+      "description": "Cotton Woven Fabrics",
+      "quantity": "5,000 meters",
+      "hs_code": "",
+      "value": 25000
+    },
+    {
+      "description": "Polyester Blend Textiles",
+      "quantity": "3,000 meters",
+      "hs_code": "POLY",
+      "value": 20000
+    },
+    {
+      "description": "Garment Accessories (Buttons, Zippers)",
+      "quantity": "50,000 pieces",
+      "hs_code": "96061000",
+      "value": 15000
+    },
+    {
+      "description": "Thread and Yarn",
+      "quantity": "1,000 kg",
+      "hs_code": "INVALID-CODE-123",
+      "value": 35000
+    }
+  ],
+  "compliance_issues": {
+    "primary_hs_code": "Listed as 'MIXED' which is not a valid HS classification",
+    "individual_codes": [
+      "Empty HS code for cotton fabrics",
+      "Invalid 'POLY' code for polyester textiles",
+      "Correct code 96061000 for accessories",
+      "Invalid format 'INVALID-CODE-123' for thread"
+    ]
+  },
+  "_test_expectations": {
+    "should_fail_hs_code_validation": true,
+    "expected_violations": [
+      "BD-003: HS Code exact matching requirement",
+      "Local regulation: Invalid commodity classification",
+      "Documentation: Inconsistent product coding",
+      "Customs clearance: Classification ambiguity"
+    ],
+    "expected_compliance_score": "< 0.6",
+    "critical_issues": [
+      "Primary HS code 'MIXED' is not a valid tariff classification",
+      "Multiple invalid HS codes in product breakdown",
+      "Customs authorities require specific 6-10 digit HS codes",
+      "Missing or incorrect classification will delay clearance"
+    ],
+    "test_purpose": "Validate HS code format and classification requirements for Bangladesh imports"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "scenario_name": "Critical - Expired LC",
+  "description": "Letter of Credit has expired - critical validation failure",
+  "documents": [
+    {
+      "document_type": "letter_of_credit",
+      "ocr_confidence": 0.96,
+      "processing_time_ms": 1150,
+      "full_text": "IRREVOCABLE LETTER OF CREDIT\nLC NUMBER: LC2024987654\nISSUE DATE: 01/01/2024\nEXPIRY DATE: 15/01/2024\nAMOUNT: USD 75,000.00\nAPPLICANT: Future Tech Ltd, Dubai, UAE\nBENEFICIARY: Innovation Corp, Hong Kong\nPORT OF LOADING: Hong Kong Port\nPORT OF DISCHARGE: Dubai Port\nLAST SHIPMENT DATE: 10/01/2024",
+      "extracted_fields": [
+        {
+          "field_name": "lc_number",
+          "field_type": "text",
+          "value": "LC2024987654",
+          "confidence": 0.99,
+          "raw_text": "LC NUMBER: LC2024987654"
+        },
+        {
+          "field_name": "issue_date",
+          "field_type": "date",
+          "value": "01/01/2024",
+          "confidence": 0.98,
+          "raw_text": "ISSUE DATE: 01/01/2024"
+        },
+        {
+          "field_name": "expiry_date",
+          "field_type": "date",
+          "value": "15/01/2024",
+          "confidence": 0.98,
+          "raw_text": "EXPIRY DATE: 15/01/2024"
+        },
+        {
+          "field_name": "lc_amount",
+          "field_type": "amount",
+          "value": "$75,000.00",
+          "confidence": 0.99,
+          "raw_text": "AMOUNT: USD 75,000.00"
+        },
+        {
+          "field_name": "applicant",
+          "field_type": "party",
+          "value": "Future Tech Ltd, Dubai, UAE",
+          "confidence": 0.95,
+          "raw_text": "APPLICANT: Future Tech Ltd, Dubai, UAE"
+        },
+        {
+          "field_name": "beneficiary",
+          "field_type": "party",
+          "value": "Innovation Corp, Hong Kong",
+          "confidence": 0.96,
+          "raw_text": "BENEFICIARY: Innovation Corp, Hong Kong"
+        },
+        {
+          "field_name": "port_of_loading",
+          "field_type": "port",
+          "value": "Hong Kong Port",
+          "confidence": 0.94,
+          "raw_text": "PORT OF LOADING: Hong Kong Port"
+        },
+        {
+          "field_name": "port_of_discharge",
+          "field_type": "port",
+          "value": "Dubai Port",
+          "confidence": 0.93,
+          "raw_text": "PORT OF DISCHARGE: Dubai Port"
+        }
+      ]
+    }
+  ],
+  "expected_discrepancies": 1,
+  "expected_critical_issues": 1,
+  "expected_major_issues": 0,
+  "expected_minor_issues": 0,
+  "simulate_ocr_failure": false,
+  "simulate_storage_failure": false,
+  "tags": ["critical", "expired", "date_validation"],
+  "notes": "Single document scenario with expired LC. The expiry date (15/01/2024) is in the past, triggering a critical validation failure."
+}

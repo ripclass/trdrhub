@@ -1,0 +1,156 @@
+{
+  "lc_number": "LC2024-BD-VIOLATIONS",
+  "issue_date": "2024-01-15",
+  "latest_shipment_date": "2024-02-15",
+  "expiry_date": "2024-03-01",
+  "expiry_place": "Dhaka",
+  "amount": {
+    "value": 85000.00,
+    "currency": "EUR"
+  },
+  "applicant": {
+    "name": "BD Import Solutions",
+    "address": "Dhaka",
+    "country": "Bangladesh"
+  },
+  "beneficiary": {
+    "name": "European Exports GmbH",
+    "address": "Industrial District, Berlin, Germany",
+    "country": "Germany"
+  },
+  "issuing_bank": {
+    "name": "Local Bank Ltd",
+    "swift_code": "LOCBBDDH",
+    "address": "Main Branch, Dhaka"
+  },
+  "advising_bank": {
+    "name": "Deutsche Bank AG",
+    "swift_code": "DEUTDEFF",
+    "address": "Trade Finance Division, Frankfurt, Germany"
+  },
+  "description_of_goods": "Electronics and Technical Equipment - Various items without specific classification",
+  "hs_code": "",
+  "quantity": "As per attached specification",
+  "unit_price": {
+    "value": "Various",
+    "currency": "EUR"
+  },
+  "port_of_loading": "Hamburg Port, Germany",
+  "port_of_discharge": "Chittagong",
+  "final_destination": "Dhaka, Bangladesh",
+  "incoterms": "CIF Chittagong",
+  "payment_terms": "At sight",
+  "presentation_period": "Documents must be presented within 30 days after shipment date",
+  "partial_shipments": "Prohibited",
+  "transshipment": "Allowed",
+  "tolerance": {
+    "amount": "No tolerance allowed",
+    "quantity": "Exact quantity required"
+  },
+  "required_documents": [
+    "Commercial Invoice",
+    "Bill of Lading",
+    "Packing List",
+    "Certificate of Origin from any recognized chamber",
+    "Insurance Certificate"
+  ],
+  "special_instructions": [
+    "Documents may be in German language",
+    "Photocopies acceptable for all documents",
+    "Bank charges as per standard rates"
+  ],
+  "insurance_coverage": {
+    "percentage": "100% of invoice value",
+    "clauses": ["Basic coverage"],
+    "currency": "EUR"
+  },
+  "certificate_requirements": {
+    "origin": "Certificate of Origin from any European chamber of commerce",
+    "inspection": "Optional inspection certificate"
+  },
+  "banking_instructions": {
+    "charges": "As per bank tariff",
+    "documentation": "Standard international practice"
+  },
+  "product_details": [
+    {
+      "description": "Electronic Components",
+      "quantity": "500 units",
+      "hs_code": "",
+      "value": 35000,
+      "origin": "Germany"
+    },
+    {
+      "description": "Technical Equipment",
+      "quantity": "50 units",
+      "hs_code": "TECH",
+      "value": 25000,
+      "origin": "Germany"
+    },
+    {
+      "description": "Spare Parts",
+      "quantity": "Various",
+      "hs_code": "8999",
+      "value": 25000,
+      "origin": "Germany"
+    }
+  ],
+  "bangladesh_specific_violations": {
+    "address_format": "Incomplete addresses lacking postal codes and detailed location",
+    "currency_issue": "EUR instead of standard USD for Bangladesh imports",
+    "hs_code_problems": "Missing or invalid HS codes for customs classification",
+    "presentation_period": "30 days exceeds Bangladesh banking standard of 21 days",
+    "certificate_origin": "Vague issuer specification instead of specific recognized authority",
+    "insurance_coverage": "100% coverage insufficient, should be 110% of CIF value",
+    "language_requirements": "Documents in German not acceptable, must be in English",
+    "port_specification": "Incomplete discharge port specification"
+  },
+  "regulatory_compliance_issues": {
+    "bangladesh_bank": [
+      "Non-standard currency creates foreign exchange complications",
+      "Incomplete beneficiary address format",
+      "Missing specific HS codes for import clearance"
+    ],
+    "customs_authorities": [
+      "Invalid HS classifications will delay customs clearance",
+      "Missing product-specific import documentation",
+      "Incomplete port of discharge specification"
+    ],
+    "commercial_practice": [
+      "30-day presentation period non-standard for BD banks",
+      "Insurance coverage below market standard",
+      "Certificate of origin issuer not specified adequately"
+    ]
+  },
+  "_test_expectations": {
+    "should_fail_bangladesh_rules": true,
+    "expected_violations": [
+      "BD-001: Beneficiary address format incomplete",
+      "BD-002: Currency consistency - EUR not standard",
+      "BD-003: HS Code missing or invalid format",
+      "BD-004: Presentation period exceeds 21-day standard",
+      "BD-005: Insurance coverage insufficient (100% vs 110%)",
+      "BD-008: Certificate of origin issuer vague",
+      "BD-009: Port specification incomplete",
+      "BD-010: Language requirements not met"
+    ],
+    "expected_compliance_score": "< 0.4",
+    "critical_business_impact": [
+      "Customs clearance delays due to missing HS codes",
+      "Foreign exchange complications with EUR currency",
+      "Banking processing delays due to non-standard terms",
+      "Documentation issues leading to potential LC rejection"
+    ],
+    "recommended_fixes": [
+      "Convert currency to USD",
+      "Add complete addresses with postal codes",
+      "Specify valid 6-digit HS codes for each product",
+      "Reduce presentation period to 21 days",
+      "Increase insurance to 110% of CIF value",
+      "Specify DCCI/CCCI as certificate issuer",
+      "Complete port specifications",
+      "Require English language documents"
+    ],
+    "test_purpose": "Validate Bangladesh-specific banking and regulatory compliance requirements"
+  }
+}

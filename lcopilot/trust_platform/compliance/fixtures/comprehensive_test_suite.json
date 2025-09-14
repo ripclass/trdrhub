@@ -1,0 +1,81 @@
+{
+  "lc_number": "LC2024-COMPREHENSIVE",
+  "issue_date": "2024-01-15",
+  "latest_shipment_date": "2024-02-15",
+  "expiry_date": "2024-03-01",
+  "expiry_place": "Dhaka, Bangladesh",
+  "amount": {
+    "value": 150000.00,
+    "currency": "USD"
+  },
+  "applicant": {
+    "name": "Bangladesh Trading Corporation",
+    "address": "House 123, Road 45, Gulshan-2, Dhaka-1212, Bangladesh",
+    "country": "Bangladesh"
+  },
+  "beneficiary": {
+    "name": "International Exports Limited",
+    "address": "Export House, Industrial Estate, Chennai-600001, India",
+    "country": "India"
+  },
+  "issuing_bank": {
+    "name": "Dutch-Bangla Bank Limited",
+    "swift_code": "DBBLBDDH",
+    "address": "Motijheel C/A, Dhaka-1000, Bangladesh"
+  },
+  "advising_bank": {
+    "name": "ICICI Bank Limited",
+    "swift_code": "ICICINBB",
+    "address": "Chennai Main Branch, India"
+  },
+  "presentation_period": "Documents must be presented within 21 days after the date of shipment",
+  "partial_shipments": "Allowed",
+  "transshipment": "Allowed",
+  "required_documents": [
+    "Signed Commercial Invoice in triplicate indicating LC number and contract number",
+    "Full set of Clean on Board Ocean Bills of Lading made out to order of issuing bank blank endorsed marked freight prepaid",
+    "Packing List showing gross/net weights and measurements",
+    "Certificate of Origin issued by DCCI (Dhaka Chamber of Commerce & Industry)",
+    "GSP Certificate Form A if applicable",
+    "Marine Insurance Certificate covering Institute Cargo Clauses (A) for 110% of invoice value",
+    "Inspection Certificate issued by SGS or equivalent inspection company"
+  ],
+  "certificate_requirements": "Certificate of Origin must be issued by Dhaka Chamber of Commerce & Industry (DCCI) and duly signed by authorized signatory",
+  "description_of_goods": "100% Cotton Woven Fabrics, Plain Weave, Bleached, Width 58/60 inches, Weight 120-140 GSM, HS Code: 5208.21.00 as per Proforma Invoice PI-2024-CHN-001 dated 2024-01-05",
+  "hs_code": "5208.21.00",
+  "port_of_loading": "Chittagong Port, Bangladesh",
+  "port_of_discharge": "Chennai Port (Madras), India",
+  "incoterms": "CFR Chennai",
+  "payment_terms": "By negotiation of documents at sight",
+  "insurance_coverage": "Marine and War Risks covering 110% of CIF value",
+  "special_conditions": [
+    "All documents must be in English",
+    "Third party documents acceptable",
+    "Courier receipts in lieu of originals acceptable for all documents except Bills of Lading",
+    "Documents must indicate contract number CTR-2024-001"
+  ],
+  "tolerance": {
+    "amount": "5% plus/minus allowed",
+    "quantity": "10% plus/minus allowed"
+  },
+  "charges": {
+    "outside_bangladesh": "for beneficiary account",
+    "inside_bangladesh": "for applicant account"
+  },
+  "_test_metadata": {
+    "purpose": "Comprehensive test covering all major compliance areas",
+    "test_coverage": [
+      "UCP600 fundamental requirements",
+      "ISBP document examination standards",
+      "Bangladesh local banking practices",
+      "Date logic validation",
+      "Amount and tolerance checks",
+      "Document requirements validation",
+      "Certificate issuer verification",
+      "Address format compliance"
+    ],
+    "expected_violations": 0,
+    "should_achieve_high_score": true,
+    "complexity_level": "high"
+  }
+}

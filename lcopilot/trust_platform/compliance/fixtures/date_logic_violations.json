@@ -1,0 +1,39 @@
+{
+  "lc_number": "LC2024-FAIL-001",
+  "issue_date": "2024-02-20",
+  "latest_shipment_date": "2024-02-10",
+  "expiry_date": "2024-02-05",
+  "expiry_place": "Dhaka",
+  "amount": {
+    "value": 50000.00,
+    "currency": "USD"
+  },
+  "applicant": {
+    "name": "Problem Import Co.",
+    "address": "Trade Street, Dhaka",
+    "country": "Bangladesh"
+  },
+  "beneficiary": {
+    "name": "Export Corp",
+    "address": "Export Road, India",
+    "country": "India"
+  },
+  "presentation_period": "15 days after shipment",
+  "required_documents": [
+    "Invoice",
+    "Bill of Lading"
+  ],
+  "_test_metadata": {
+    "purpose": "Test date logic failures",
+    "expected_violations": [
+      "UCP600-31",
+      "ISBP-A11",
+      "UCP600-14"
+    ],
+    "issues": [
+      "Issue date (2024-02-20) after shipment date (2024-02-10)",
+      "Shipment date (2024-02-10) after expiry date (2024-02-05)",
+      "Issue date (2024-02-20) after expiry date (2024-02-05)"
+    ]
+  }
+}
