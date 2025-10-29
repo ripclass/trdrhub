@@ -10,7 +10,8 @@ interface Bank {
 interface BankSelectProps {
   banks: Bank[]
   selectedBank: string
-  onBankChange: (bankCode: string) => void
+  onBankChange?: (bankCode: string) => void
+  onSelect?: (bankCode: string) => void
   disabled?: boolean
 }
 
@@ -18,6 +19,7 @@ export default function BankSelect({
   banks, 
   selectedBank, 
   onBankChange, 
+  onSelect,
   disabled = false 
 }: BankSelectProps) {
   return (
@@ -28,7 +30,7 @@ export default function BankSelect({
       <select
         id="bank-select"
         value={selectedBank}
-        onChange={(e) => onBankChange(e.target.value)}
+        onChange={(e) => (onBankChange || onSelect)?.(e.target.value)}
         disabled={disabled}
         className={styles.select}
       >
