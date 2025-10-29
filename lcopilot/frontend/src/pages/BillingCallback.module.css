@@ -1,0 +1,145 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: #f9fafb;
+}
+
+.card {
+  max-width: 500px;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  text-align: center;
+}
+
+.loading,
+.success,
+.error,
+.cancelled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loading {
+  color: #6b7280;
+}
+
+.success {
+  color: #10b981;
+}
+
+.error {
+  color: #ef4444;
+}
+
+.cancelled {
+  color: #f59e0b;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #111827;
+}
+
+p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.details {
+  width: 100%;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+.detailItem:not(:last-child) {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.label {
+  color: #6b7280;
+}
+
+.value {
+  font-weight: 500;
+  color: #111827;
+  font-family: monospace;
+}
+
+.button,
+.primaryButton {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button {
+  background: white;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+.button:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.primaryButton {
+  background: #3b82f6;
+  color: white;
+}
+
+.primaryButton:hover {
+  background: #2563eb;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}

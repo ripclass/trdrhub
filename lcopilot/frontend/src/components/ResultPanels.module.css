@@ -1,0 +1,360 @@
+.container {
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  background: #f3f4f6;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+}
+
+.tab:hover {
+  color: #374151;
+}
+
+.tabActive {
+  background: white;
+  color: #111827;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.content {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* SME Content */
+.smeContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.scoreCard {
+  padding: 1.25rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.scoreHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.scoreValue {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.scoreExcellent {
+  color: #10b981;
+}
+
+.scoreGood {
+  color: #3b82f6;
+}
+
+.scoreWarning {
+  color: #f59e0b;
+}
+
+.scoreCritical {
+  color: #ef4444;
+}
+
+.scoreBar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.scoreBarFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.scoreMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.findingsSection h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.125rem;
+  color: #111827;
+}
+
+.noFindings {
+  text-align: center;
+  padding: 2rem;
+  color: #10b981;
+}
+
+.noFindings p {
+  margin-top: 0.5rem;
+  color: #374151;
+}
+
+.findingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.findingCard {
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.findingCritical {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.findingWarning {
+  background: #fffbeb;
+  border-color: #fed7aa;
+}
+
+.findingInfo {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.findingHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.findingCritical .findingHeader {
+  color: #dc2626;
+}
+
+.findingWarning .findingHeader {
+  color: #f59e0b;
+}
+
+.findingInfo .findingHeader {
+  color: #3b82f6;
+}
+
+.findingCategory {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.findingBody {
+  margin-left: 1.75rem;
+}
+
+.findingDescription {
+  margin: 0 0 0.75rem 0;
+  color: #374151;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.findingDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.findingField {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.fieldLabel {
+  color: #6b7280;
+}
+
+.fieldValue {
+  color: #111827;
+  font-weight: 500;
+}
+
+.findingComparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 6px;
+}
+
+.expected,
+.actual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.comparisonLabel {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.comparisonValue {
+  font-size: 0.875rem;
+  color: #111827;
+  font-family: monospace;
+}
+
+/* Bank Content */
+.bankContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.formalHeader h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+.complianceStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.statusIconSuccess {
+  color: #10b981;
+}
+
+.statusIconError {
+  color: #ef4444;
+}
+
+.severityGroup {
+  margin-bottom: 1.5rem;
+}
+
+.severityTitle {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.titleCritical {
+  color: #dc2626;
+}
+
+.titleWarning {
+  color: #f59e0b;
+}
+
+.titleInfo {
+  color: #3b82f6;
+}
+
+.findingsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.findingsTable thead {
+  background: #f9fafb;
+}
+
+.findingsTable th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 500;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.findingsTable td {
+  padding: 0.75rem;
+  color: #111827;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.referenceLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.referenceLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 1rem;
+  }
+
+  .findingComparison {
+    grid-template-columns: 1fr;
+  }
+
+  .findingsTable {
+    font-size: 0.75rem;
+  }
+
+  .findingsTable th,
+  .findingsTable td {
+    padding: 0.5rem;
+  }
+
+  .scoreValue {
+    font-size: 1.5rem;
+  }
+}

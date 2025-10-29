@@ -1,0 +1,140 @@
+.container {
+  width: 100%;
+}
+
+.uploadBox {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  background-color: #fafafa;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploadBox:hover:not(.disabled) {
+  border-color: #3b82f6;
+  background-color: #f0f9ff;
+}
+
+.uploadBox.dragging {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.uploadBox.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.uploadBox.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.uploadPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+}
+
+.mainText {
+  font-size: 1rem;
+  color: #374151;
+  margin: 0.5rem 0;
+}
+
+.browseButton {
+  color: #3b82f6;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.browseButton:hover {
+  color: #2563eb;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.helpText {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.fileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  padding: 1rem;
+}
+
+.fileName {
+  font-weight: 500;
+  color: #374151;
+  word-break: break-all;
+  max-width: 100%;
+}
+
+.fileSize {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.removeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.removeButton:hover {
+  background: #dc2626;
+}
+
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 640px) {
+  .uploadBox {
+    padding: 1.5rem;
+  }
+
+  .mainText {
+    font-size: 0.9rem;
+  }
+
+  .helpText {
+    font-size: 0.8rem;
+  }
+}

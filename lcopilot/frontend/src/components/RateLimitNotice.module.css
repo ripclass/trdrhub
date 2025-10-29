@@ -1,0 +1,134 @@
+.container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #f59e0b;
+}
+
+.title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.message {
+  margin: 0 0 1rem 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.retryInfo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #92400e;
+  margin-bottom: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.primaryButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primaryButton:hover {
+  background: #2563eb;
+}
+
+.secondaryButton {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: white;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondaryButton:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.helpText {
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.helpText p {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.875rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.helpText ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: none;
+}
+
+.helpText li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8125rem;
+  color: #6b7280;
+}
+
+.helpText li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,15 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+pydantic==2.5.0
+python-dateutil==2.8.2
+
+# Document validation dependencies
+python-magic==0.4.27
+PyPDF2==3.0.1
+pytesseract==0.3.10
+Pillow==10.0.1
+
+# Testing dependencies
+pytest==7.4.3
+requests==2.31.0

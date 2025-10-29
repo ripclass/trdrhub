@@ -1,0 +1,153 @@
+.container {
+  width: 100%;
+}
+
+/* Desktop view */
+.strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.stageIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  color: #9ca3af;
+  transition: all 0.3s ease;
+}
+
+.stage.completed .stageIcon {
+  background: #10b981;
+  color: white;
+}
+
+.stage.active .stageIcon {
+  background: #3b82f6;
+  color: white;
+}
+
+.stage.error .stageIcon {
+  background: #ef4444;
+  color: white;
+}
+
+.errorIcon {
+  font-weight: bold;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stageContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.stageLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.stage.pending .stageLabel {
+  color: #9ca3af;
+}
+
+.stageDescription {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.125rem;
+}
+
+.connector {
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 0 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.connectorCompleted {
+  background: #10b981;
+}
+
+/* Mobile view */
+.mobileStrip {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .strip {
+    display: none;
+  }
+
+  .mobileStrip {
+    display: block;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .mobileProgress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .mobileLabel {
+    font-weight: 500;
+    color: #374151;
+    font-size: 0.875rem;
+  }
+
+  .mobileSteps {
+    font-size: 0.75rem;
+    color: #6b7280;
+  }
+
+  .mobileBar {
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .mobileBarFill {
+    height: 100%;
+    background: #3b82f6;
+    border-radius: 3px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+
+  .mobileBarError {
+    background: #ef4444;
+  }
+}

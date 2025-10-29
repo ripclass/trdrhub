@@ -1,0 +1,25 @@
+Curriculum Vitae
+
+John Doe
+Software Engineer
+Email: john.doe@email.com
+Phone: +1234567890
+
+EXPERIENCE:
+2020-2024: Senior Software Engineer at Tech Corp
+- Developed web applications using Python and React
+- Led a team of 5 developers
+- Implemented CI/CD pipelines
+
+2018-2020: Software Developer at StartupXYZ
+- Built mobile applications
+- Worked with APIs and databases
+
+EDUCATION:
+2014-2018: Bachelor of Computer Science
+University of Technology
+
+SKILLS:
+- Python, JavaScript, React
+- Docker, Kubernetes
+- AWS, MongoDB

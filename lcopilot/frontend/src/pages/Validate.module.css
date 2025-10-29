@@ -1,0 +1,177 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.875rem;
+  color: #111827;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.section h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.125rem;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loading {
+  padding: 1rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.modeToggle {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.toggleLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.toggleLabel input {
+  display: none;
+}
+
+.toggleSlider {
+  width: 48px;
+  height: 24px;
+  background: #d1d5db;
+  border-radius: 999px;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.toggleSlider::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.toggleLabel input:checked + .toggleSlider {
+  background: #3b82f6;
+}
+
+.toggleLabel input:checked + .toggleSlider::after {
+  transform: translateX(24px);
+}
+
+.toggleText {
+  font-weight: 500;
+  color: #374151;
+}
+
+.modeInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.submitButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+
+  .submitButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,37 @@
+COMMERCIAL INVOICE
+
+Invoice No: COM-2024-001
+Invoice Date: January 15, 2024
+
+SELLER:
+Global Exports Limited
+123 Export Street
+Trade City, TC 12345
+Email: exports@globalexports.com
+
+BUYER:
+American Imports Corporation
+456 Import Avenue
+Commerce City, CC 67890
+Email: imports@americanimports.com
+
+DESCRIPTION OF GOODS:
+- Cotton T-Shirts (100% Cotton) - 1,000 pieces @ USD 15.00 each
+- Cotton Jeans (Denim) - 500 pieces @ USD 25.00 each
+- Cotton Shirts (Formal) - 200 pieces @ USD 30.00 each
+
+TOTAL VALUE:
+Goods Value: USD 33,500.00
+Freight Charges: USD 1,500.00
+Insurance: USD 350.00
+TOTAL AMOUNT: USD 35,350.00
+
+PAYMENT TERMS: Letter of Credit
+SHIPMENT: By Sea from Chittagong to New York
+INCOTERMS: CIF New York
+
+Certified that this invoice is true and correct.
+
+_____________________
+Export Manager
+Global Exports Limited
