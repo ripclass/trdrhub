@@ -1,0 +1,48 @@
+{
+  "description": "LC document tested with Islamic bank's conservative Shariah compliance",
+  "bank_code": "ISLAMI_BANK_BD",
+  "expected_outcome": "requires_review",
+  "lc_document": {
+    "lc_number": "ISLAMIC-TEST-001",
+    "issue_date": "2024-01-15",
+    "latest_shipment_date": "2024-02-15",
+    "expiry_date": "2024-03-01",
+    "amount": {
+      "value": 120000,
+      "currency": "USD"
+    },
+    "applicant": {
+      "name": "Halal Trade Company Ltd.",
+      "address": "234 Islamic Banking Street, Dhaka-1209",
+      "country": "Bangladesh"
+    },
+    "beneficiary": {
+      "name": "Shariah Compliant Exports",
+      "address": "567 Halal Commerce Center, Dubai, UAE",
+      "country": "UAE"
+    },
+    "description_of_goods": "Halal Food Products",
+    "hs_code": "2106.90.99",
+    "required_documents": [
+      "Commercial Invoice",
+      "Bill of Lading",
+      "Halal Certificate",
+      "Certificate of Origin",
+      "Takaful Insurance Policy"
+    ],
+    "insurance_coverage": {
+      "type": "Takaful",
+      "percentage": "110%"
+    },
+    "shariah_compliance": {
+      "halal_certificate": "Required",
+      "interest_free": true
+    }
+  },
+  "expected_features": [
+    "Shariah compliance validation",
+    "Conservative enforcement approach",
+    "Takaful insurance requirements",
+    "Enhanced documentation scrutiny"
+  ]
+}

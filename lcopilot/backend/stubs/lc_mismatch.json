@@ -1,0 +1,164 @@
+{
+  "scenario_name": "LC Fatal Four Mismatches",
+  "description": "Multiple discrepancies across all Fatal Four categories - dates, amounts, parties, ports",
+  "documents": [
+    {
+      "document_type": "letter_of_credit",
+      "ocr_confidence": 0.93,
+      "processing_time_ms": 1300,
+      "full_text": "IRREVOCABLE LETTER OF CREDIT\nLC NUMBER: LC2024005678\nISSUE DATE: 10/01/2024\nEXPIRY DATE: 28/02/2024\nAMOUNT: USD 100,000.00\nAPPLICANT: DEF Industries Ltd, Chittagong, Bangladesh\nBENEFICIARY: PQR Manufacturing Co, Chennai, India\nPORT OF LOADING: Chittagong\nPORT OF DISCHARGE: Chennai Port\nLAST SHIPMENT DATE: 20/02/2024",
+      "extracted_fields": [
+        {
+          "field_name": "lc_number",
+          "field_type": "text",
+          "value": "LC2024005678",
+          "confidence": 0.97,
+          "raw_text": "LC NUMBER: LC2024005678"
+        },
+        {
+          "field_name": "issue_date",
+          "field_type": "date",
+          "value": "10/01/2024",
+          "confidence": 0.95,
+          "raw_text": "ISSUE DATE: 10/01/2024"
+        },
+        {
+          "field_name": "expiry_date",
+          "field_type": "date",
+          "value": "28/02/2024",
+          "confidence": 0.96,
+          "raw_text": "EXPIRY DATE: 28/02/2024"
+        },
+        {
+          "field_name": "lc_amount",
+          "field_type": "amount",
+          "value": "$100,000.00",
+          "confidence": 0.98,
+          "raw_text": "AMOUNT: USD 100,000.00"
+        },
+        {
+          "field_name": "applicant",
+          "field_type": "party",
+          "value": "DEF Industries Ltd, Chittagong, Bangladesh",
+          "confidence": 0.92,
+          "raw_text": "APPLICANT: DEF Industries Ltd, Chittagong, Bangladesh"
+        },
+        {
+          "field_name": "beneficiary",
+          "field_type": "party",
+          "value": "PQR Manufacturing Co, Chennai, India",
+          "confidence": 0.94,
+          "raw_text": "BENEFICIARY: PQR Manufacturing Co, Chennai, India"
+        },
+        {
+          "field_name": "port_of_loading",
+          "field_type": "port",
+          "value": "Chittagong",
+          "confidence": 0.91,
+          "raw_text": "PORT OF LOADING: Chittagong"
+        },
+        {
+          "field_name": "port_of_discharge",
+          "field_type": "port",
+          "value": "Chennai Port",
+          "confidence": 0.90,
+          "raw_text": "PORT OF DISCHARGE: Chennai Port"
+        }
+      ]
+    },
+    {
+      "document_type": "commercial_invoice",
+      "ocr_confidence": 0.88,
+      "processing_time_ms": 1150,
+      "full_text": "COMMERCIAL INVOICE\nINVOICE NUMBER: INV-2024-9999\nINVOICE DATE: 05/03/2024\nFROM: ABC Export House, Mumbai, India\nTO: XYZ Trading Corp, Dhaka, Bangladesh\nTOTAL AMOUNT: USD 115,750.00\nDESCRIPTION: Textile Products\nQUANTITY: 500 units\nSHIPMENT FROM: Mumbai Port\nDESTINATION: Mongla Port",
+      "extracted_fields": [
+        {
+          "field_name": "invoice_number",
+          "field_type": "text",
+          "value": "INV-2024-9999",
+          "confidence": 0.96,
+          "raw_text": "INVOICE NUMBER: INV-2024-9999"
+        },
+        {
+          "field_name": "invoice_date",
+          "field_type": "date",
+          "value": "05/03/2024",
+          "confidence": 0.89,
+          "raw_text": "INVOICE DATE: 05/03/2024"
+        },
+        {
+          "field_name": "invoice_amount",
+          "field_type": "amount",
+          "value": "$115,750.00",
+          "confidence": 0.97,
+          "raw_text": "TOTAL AMOUNT: USD 115,750.00"
+        },
+        {
+          "field_name": "consignee",
+          "field_type": "party",
+          "value": "XYZ Trading Corp, Dhaka, Bangladesh",
+          "confidence": 0.85,
+          "raw_text": "TO: XYZ Trading Corp, Dhaka, Bangladesh"
+        }
+      ]
+    },
+    {
+      "document_type": "bill_of_lading",
+      "ocr_confidence": 0.84,
+      "processing_time_ms": 1400,
+      "full_text": "BILL OF LADING\nB/L NUMBER: BL-2024-7777\nDATE: 25/02/2024\nSHIPPER: MNO Logistics Ltd, Kolkata, India\nCONSIGNEE: GHI Imports Ltd, Sylhet, Bangladesh\nPORT OF LOADING: Haldia Port\nPORT OF DISCHARGE: Chattogram Port\nDESCRIPTION: Mixed Cargo - 750 packages\nVESSEL: MV Ocean Express\nVOYAGE: OE-2024-15",
+      "extracted_fields": [
+        {
+          "field_name": "bl_number",
+          "field_type": "text",
+          "value": "BL-2024-7777",
+          "confidence": 0.94,
+          "raw_text": "B/L NUMBER: BL-2024-7777"
+        },
+        {
+          "field_name": "bl_date",
+          "field_type": "date",
+          "value": "25/02/2024",
+          "confidence": 0.88,
+          "raw_text": "DATE: 25/02/2024"
+        },
+        {
+          "field_name": "shipper",
+          "field_type": "party",
+          "value": "MNO Logistics Ltd, Kolkata, India",
+          "confidence": 0.86,
+          "raw_text": "SHIPPER: MNO Logistics Ltd, Kolkata, India"
+        },
+        {
+          "field_name": "consignee",
+          "field_type": "party",
+          "value": "GHI Imports Ltd, Sylhet, Bangladesh",
+          "confidence": 0.83,
+          "raw_text": "CONSIGNEE: GHI Imports Ltd, Sylhet, Bangladesh"
+        },
+        {
+          "field_name": "port_of_loading",
+          "field_type": "port",
+          "value": "Haldia Port",
+          "confidence": 0.81,
+          "raw_text": "PORT OF LOADING: Haldia Port"
+        },
+        {
+          "field_name": "port_of_discharge",
+          "field_type": "port",
+          "value": "Chattogram Port",
+          "confidence": 0.82,
+          "raw_text": "PORT OF DISCHARGE: Chattogram Port"
+        }
+      ]
+    }
+  ],
+  "expected_discrepancies": 8,
+  "expected_critical_issues": 2,
+  "expected_major_issues": 6,
+  "expected_minor_issues": 0,
+  "simulate_ocr_failure": false,
+  "simulate_storage_failure": false,
+  "tags": ["mismatch", "fatal_four", "discrepancies"],
+  "notes": "Multiple Fatal Four violations: 1) Invoice date after LC expiry, 2) Invoice amount exceeds LC amount, 3) Different parties across documents, 4) Port mismatches between documents. This scenario tests all validation rules."
+}

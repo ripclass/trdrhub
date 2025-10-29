@@ -1,0 +1,140 @@
+{
+  "lc_number": "LC2024-PARTIAL-001",
+  "issue_date": "2024-01-15",
+  "latest_shipment_date": "2024-02-28",
+  "expiry_date": "2024-03-15",
+  "expiry_place": "Chittagong, Bangladesh",
+  "amount": {
+    "value": 200000.00,
+    "currency": "USD"
+  },
+  "applicant": {
+    "name": "Large Volume Imports Ltd.",
+    "address": "Industrial Plot 25, DEPZ, Savar, Dhaka-1340, Bangladesh",
+    "country": "Bangladesh"
+  },
+  "beneficiary": {
+    "name": "Bulk Manufacturing Corporation",
+    "address": "Manufacturing Hub, Industrial Area, Coimbatore-641021, India",
+    "country": "India"
+  },
+  "issuing_bank": {
+    "name": "Islami Bank Bangladesh Limited",
+    "swift_code": "IBBLBDDH",
+    "address": "Head Office, 40 Dilkusha C/A, Dhaka-1000, Bangladesh"
+  },
+  "advising_bank": {
+    "name": "Indian Bank",
+    "swift_code": "IDIBINBB",
+    "address": "International Division, Chennai-600001, India"
+  },
+  "description_of_goods": "100% Cotton Yarn, Count 20s/1, Ring Spun, Raw White, Cone Packing, HS Code: 5205.11.00",
+  "hs_code": "5205.11.00",
+  "quantity": "100,000 kg",
+  "unit_price": {
+    "value": 2.00,
+    "currency": "USD",
+    "unit": "per kg"
+  },
+  "port_of_loading": "Tuticorin Port, India",
+  "port_of_discharge": "Chittagong Port, Bangladesh",
+  "final_destination": "Savar Industrial Area, Bangladesh",
+  "incoterms": "CFR Chittagong",
+  "payment_terms": "At sight against complying documents",
+  "presentation_period": "Documents must be presented within 21 days after each shipment date but not later than expiry date",
+  "partial_shipments": "Allowed - minimum shipment 20,000 kg, maximum 4 shipments",
+  "transshipment": "Allowed",
+  "tolerance": {
+    "amount": "5% plus/minus allowed",
+    "quantity": "5% plus/minus allowed per shipment"
+  },
+  "required_documents": [
+    "Commercial Invoice in triplicate showing partial shipment details",
+    "Full set of clean on board ocean Bills of Lading indicating partial shipment number",
+    "Detailed Packing List with shipment-wise breakdown",
+    "Certificate of Origin issued by Indian Chamber of Commerce",
+    "Quality Certificate from manufacturer confirming yarn specifications",
+    "Marine Insurance Certificate covering each shipment value plus 10%"
+  ],
+  "special_instructions": [
+    "Each partial shipment must be clearly marked as 'Shipment X of Y'",
+    "Invoice must show cumulative shipped quantity and remaining balance",
+    "Bills of Lading must reference this LC number and partial shipment clause",
+    "Insurance must be obtained for each individual shipment",
+    "Final shipment documents must indicate 'Final Shipment' clearly"
+  ],
+  "partial_shipment_terms": {
+    "minimum_per_shipment": "20,000 kg",
+    "maximum_shipments_allowed": 4,
+    "shipment_schedule": "At beneficiary's option within validity period",
+    "cumulative_tracking": "Each shipment document must show total shipped and balance",
+    "final_shipment_marking": "Last shipment must be marked 'Final Shipment'",
+    "tolerance_per_shipment": "5% quantity variance allowed per individual shipment"
+  },
+  "insurance_coverage": {
+    "percentage": "110% of each shipment CIF value",
+    "clauses": ["Institute Cargo Clauses (A)", "Institute War Clauses"],
+    "currency": "USD",
+    "per_shipment": true
+  },
+  "banking_instructions": {
+    "partial_payments": "Payment will be made for each complying partial presentation",
+    "cumulative_limit": "Total payments not to exceed LC amount plus tolerance",
+    "document_requirement": "Each partial shipment requires full document set",
+    "final_shipment": "Final documents must reconcile total quantity and amount"
+  },
+  "shipment_tracking": {
+    "expected_shipments": [
+      {
+        "shipment_number": 1,
+        "planned_quantity": "25,000 kg",
+        "planned_date": "2024-02-05",
+        "status": "planned"
+      },
+      {
+        "shipment_number": 2,
+        "planned_quantity": "30,000 kg",
+        "planned_date": "2024-02-12",
+        "status": "planned"
+      },
+      {
+        "shipment_number": 3,
+        "planned_quantity": "25,000 kg",
+        "planned_date": "2024-02-19",
+        "status": "planned"
+      },
+      {
+        "shipment_number": 4,
+        "planned_quantity": "20,000 kg",
+        "planned_date": "2024-02-26",
+        "status": "planned"
+      }
+    ]
+  },
+  "compliance_considerations": {
+    "ucp600_article_31": "Partial shipments explicitly allowed with proper documentation",
+    "document_consistency": "Each partial shipment requires consistent document set",
+    "amount_tracking": "Cumulative amount control required",
+    "expiry_compliance": "Each shipment must comply with LC expiry terms"
+  },
+  "_test_expectations": {
+    "should_pass_partial_shipment_rules": true,
+    "should_validate_shipment_terms": true,
+    "expected_compliance_score": "> 0.8",
+    "key_validations": [
+      "Partial shipment terms clearly defined",
+      "Minimum shipment quantity specified",
+      "Maximum number of shipments stated",
+      "Document requirements for each shipment clear",
+      "Insurance arrangements for partial shipments defined",
+      "Cumulative amount tracking mechanism present"
+    ],
+    "potential_warnings": [
+      "Complex partial shipment tracking required",
+      "Multiple document sets needed",
+      "Insurance coordination across shipments",
+      "Final shipment marking critical for closure"
+    ],
+    "test_purpose": "Validate partial shipment compliance under UCP600 Article 31 and operational feasibility"
+  }
+}

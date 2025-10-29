@@ -1,0 +1,41 @@
+{
+  "description": "LC document that fails Sonali Bank's hyper-conservative validation",
+  "bank_code": "SONALI",
+  "expected_outcome": "non_compliant",
+  "lc_document": {
+    "lc_number": "SONALI-FAIL-001",
+    "issue_date": "2024-01-15",
+    "latest_shipment_date": "2024-02-14",
+    "expiry_date": "2024-02-28",
+    "amount": {
+      "value": 250000,
+      "currency": "EUR"
+    },
+    "applicant": {
+      "name": "Test Import Company Ltd.",
+      "address": "123 Business St, Dhaka-1000",
+      "country": "Bangladesh"
+    },
+    "beneficiary": {
+      "name": "Export Solutions Inc",
+      "address": "456 Export Avenue, Suite 100, New York NY 10001",
+      "country": "USA"
+    },
+    "description_of_goods": "Cotton Textiles",
+    "hs_code": "5208.11",
+    "required_documents": [
+      "Commercial Invoice",
+      "Bill of Lading"
+    ],
+    "insurance_coverage": {
+      "percentage": "105%"
+    }
+  },
+  "expected_violations": [
+    "Currency not in preferred list (EUR vs USD)",
+    "Amount exceeds government approval threshold",
+    "Missing Import Registration Certificate",
+    "Insurance coverage below 110% minimum",
+    "Beneficiary address format inconsistency"
+  ]
+}

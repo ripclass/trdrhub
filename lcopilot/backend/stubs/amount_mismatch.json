@@ -1,0 +1,164 @@
+{
+  "scenario_name": "Amount Mismatch - Invoice Exceeds LC",
+  "description": "Commercial Invoice amount exceeds Letter of Credit limit - major validation failure",
+  "documents": [
+    {
+      "document_type": "letter_of_credit",
+      "ocr_confidence": 0.94,
+      "processing_time_ms": 1250,
+      "full_text": "IRREVOCABLE LETTER OF CREDIT\nLC NUMBER: LC2024456789\nISSUE DATE: 05/03/2024\nEXPIRY DATE: 05/12/2024\nAMOUNT: USD 25,000.00\nAPPLICANT: Small Business Inc, Toronto, Canada\nBENEFICIARY: Reliable Suppliers Ltd, London, UK\nPORT OF LOADING: London Port\nPORT OF DISCHARGE: Toronto Port\nLAST SHIPMENT DATE: 01/12/2024",
+      "extracted_fields": [
+        {
+          "field_name": "lc_number",
+          "field_type": "text",
+          "value": "LC2024456789",
+          "confidence": 0.97,
+          "raw_text": "LC NUMBER: LC2024456789"
+        },
+        {
+          "field_name": "expiry_date",
+          "field_type": "date",
+          "value": "05/12/2024",
+          "confidence": 0.96,
+          "raw_text": "EXPIRY DATE: 05/12/2024"
+        },
+        {
+          "field_name": "lc_amount",
+          "field_type": "amount",
+          "value": "$25,000.00",
+          "confidence": 0.98,
+          "raw_text": "AMOUNT: USD 25,000.00"
+        },
+        {
+          "field_name": "applicant",
+          "field_type": "party",
+          "value": "Small Business Inc, Toronto, Canada",
+          "confidence": 0.93,
+          "raw_text": "APPLICANT: Small Business Inc, Toronto, Canada"
+        },
+        {
+          "field_name": "beneficiary",
+          "field_type": "party",
+          "value": "Reliable Suppliers Ltd, London, UK",
+          "confidence": 0.94,
+          "raw_text": "BENEFICIARY: Reliable Suppliers Ltd, London, UK"
+        },
+        {
+          "field_name": "port_of_loading",
+          "field_type": "port",
+          "value": "London Port",
+          "confidence": 0.92,
+          "raw_text": "PORT OF LOADING: London Port"
+        },
+        {
+          "field_name": "port_of_discharge",
+          "field_type": "port",
+          "value": "Toronto Port",
+          "confidence": 0.91,
+          "raw_text": "PORT OF DISCHARGE: Toronto Port"
+        }
+      ]
+    },
+    {
+      "document_type": "commercial_invoice",
+      "ocr_confidence": 0.91,
+      "processing_time_ms": 1180,
+      "full_text": "COMMERCIAL INVOICE\nINVOICE NUMBER: INV-2024-7890\nINVOICE DATE: 15/11/2024\nFROM: Reliable Suppliers Ltd, London, UK\nTO: Small Business Inc, Toronto, Canada\nTOTAL AMOUNT: USD 35,000.00\nDESCRIPTION: Premium Machinery Parts\nQUANTITY: 50 units\nSHIPMENT FROM: London Port\nDESTINATION: Toronto Port",
+      "extracted_fields": [
+        {
+          "field_name": "invoice_number",
+          "field_type": "text",
+          "value": "INV-2024-7890",
+          "confidence": 0.96,
+          "raw_text": "INVOICE NUMBER: INV-2024-7890"
+        },
+        {
+          "field_name": "invoice_date",
+          "field_type": "date",
+          "value": "15/11/2024",
+          "confidence": 0.94,
+          "raw_text": "INVOICE DATE: 15/11/2024"
+        },
+        {
+          "field_name": "invoice_amount",
+          "field_type": "amount",
+          "value": "$35,000.00",
+          "confidence": 0.97,
+          "raw_text": "TOTAL AMOUNT: USD 35,000.00"
+        },
+        {
+          "field_name": "shipper",
+          "field_type": "party",
+          "value": "Reliable Suppliers Ltd, London, UK",
+          "confidence": 0.93,
+          "raw_text": "FROM: Reliable Suppliers Ltd, London, UK"
+        },
+        {
+          "field_name": "consignee",
+          "field_type": "party",
+          "value": "Small Business Inc, Toronto, Canada",
+          "confidence": 0.92,
+          "raw_text": "TO: Small Business Inc, Toronto, Canada"
+        }
+      ]
+    },
+    {
+      "document_type": "bill_of_lading",
+      "ocr_confidence": 0.88,
+      "processing_time_ms": 1320,
+      "full_text": "BILL OF LADING\nB/L NUMBER: BL-2024-1111\nDATE: 18/11/2024\nSHIPPER: Reliable Suppliers Ltd, London, UK\nCONSIGNEE: Small Business Inc, Toronto, Canada\nPORT OF LOADING: London Port\nPORT OF DISCHARGE: Toronto Port\nDESCRIPTION: Premium Machinery Parts - 50 units\nVESSEL: MV Atlantic Trader\nVOYAGE: AT-2024-42",
+      "extracted_fields": [
+        {
+          "field_name": "bl_number",
+          "field_type": "text",
+          "value": "BL-2024-1111",
+          "confidence": 0.95,
+          "raw_text": "B/L NUMBER: BL-2024-1111"
+        },
+        {
+          "field_name": "bl_date",
+          "field_type": "date",
+          "value": "18/11/2024",
+          "confidence": 0.93,
+          "raw_text": "DATE: 18/11/2024"
+        },
+        {
+          "field_name": "shipper",
+          "field_type": "party",
+          "value": "Reliable Suppliers Ltd, London, UK",
+          "confidence": 0.90,
+          "raw_text": "SHIPPER: Reliable Suppliers Ltd, London, UK"
+        },
+        {
+          "field_name": "consignee",
+          "field_type": "party",
+          "value": "Small Business Inc, Toronto, Canada",
+          "confidence": 0.89,
+          "raw_text": "CONSIGNEE: Small Business Inc, Toronto, Canada"
+        },
+        {
+          "field_name": "port_of_loading",
+          "field_type": "port",
+          "value": "London Port",
+          "confidence": 0.87,
+          "raw_text": "PORT OF LOADING: London Port"
+        },
+        {
+          "field_name": "port_of_discharge",
+          "field_type": "port",
+          "value": "Toronto Port",
+          "confidence": 0.86,
+          "raw_text": "PORT OF DISCHARGE: Toronto Port"
+        }
+      ]
+    }
+  ],
+  "expected_discrepancies": 1,
+  "expected_critical_issues": 0,
+  "expected_major_issues": 1,
+  "expected_minor_issues": 0,
+  "simulate_ocr_failure": false,
+  "simulate_storage_failure": false,
+  "tags": ["amount_mismatch", "major", "fatal_four"],
+  "notes": "Invoice amount (USD 35,000) exceeds LC limit (USD 25,000) by USD 10,000. All other Fatal Four elements match correctly."
+}

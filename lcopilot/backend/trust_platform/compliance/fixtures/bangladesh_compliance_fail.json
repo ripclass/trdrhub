@@ -1,0 +1,48 @@
+{
+  "lc_number": "LC2024-BD-FAIL",
+  "issue_date": "2024-01-15",
+  "latest_shipment_date": "2024-02-15",
+  "expiry_date": "2024-03-01",
+  "amount": {
+    "value": 85000.00,
+    "currency": "EUR"
+  },
+  "applicant": {
+    "name": "BD Import House",
+    "address": "Dhaka",
+    "country": "Bangladesh"
+  },
+  "beneficiary": {
+    "name": "European Exports GmbH",
+    "address": "Berlin, Germany",
+    "country": "Germany"
+  },
+  "presentation_period": "30 days after shipment",
+  "required_documents": [
+    "Invoice",
+    "Bill of Lading",
+    "Certificate of Origin"
+  ],
+  "certificate_requirements": "Certificate of origin from any chamber",
+  "description_of_goods": "Electronics - Various items, no specific HS code",
+  "port_of_loading": "Hamburg Port",
+  "port_of_discharge": "Chittagong Port",
+  "incoterms": "CIF Chittagong",
+  "_test_metadata": {
+    "purpose": "Bangladesh compliance failures - multiple BD rule violations",
+    "expected_violations": [
+      "BD-001",
+      "BD-002",
+      "BD-003",
+      "BD-004",
+      "BD-008"
+    ],
+    "issues": [
+      "Incomplete address format (BD-001)",
+      "EUR currency instead of USD (BD-002)",
+      "Missing HS code (BD-003)",
+      "Non-standard presentation period (BD-004)",
+      "Vague certificate of origin issuer (BD-008)"
+    ]
+  }
+}

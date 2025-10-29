@@ -1,0 +1,52 @@
+{
+  "description": "LC document tested with HSBC's very strict international standards",
+  "bank_code": "HSBC",
+  "expected_outcome": "compliant_with_conditions",
+  "lc_document": {
+    "lc_number": "HSBC-STRICT-001",
+    "issue_date": "2024-01-15",
+    "latest_shipment_date": "2024-02-10",
+    "expiry_date": "2024-02-25",
+    "expiry_place": "Dhaka, Bangladesh",
+    "amount": {
+      "value": 500000,
+      "currency": "USD"
+    },
+    "applicant": {
+      "name": "Premium Import Corporation Limited",
+      "address": "Level 12, International Trade Center, Dhaka-1000, Bangladesh",
+      "country": "Bangladesh"
+    },
+    "beneficiary": {
+      "name": "Global Manufacturing Solutions PLC",
+      "address": "Tower Bridge House, St Katharine's Way, London E1W 1AA, United Kingdom",
+      "country": "United Kingdom"
+    },
+    "description_of_goods": "Industrial Machinery Components, HS Code: 8466.93.80",
+    "hs_code": "8466.93.80",
+    "required_documents": [
+      "Commercial Invoice in triplicate",
+      "Full Set Clean On Board Ocean Bills of Lading",
+      "Detailed Packing List",
+      "Certificate of Origin (Form A)",
+      "Marine Insurance Policy (Institute Cargo Clauses A)",
+      "Inspection Certificate by SGS or equivalent",
+      "Import License from Bangladesh authorities"
+    ],
+    "insurance_coverage": {
+      "percentage": "110%",
+      "clauses": "Institute Cargo Clauses (A)",
+      "insurer": "Lloyd's of London Syndicate"
+    },
+    "presentation_period": "21 days",
+    "partial_shipments": "Not Allowed",
+    "transshipment": "Allowed"
+  },
+  "expected_features": [
+    "Comprehensive UCP600 enforcement",
+    "Full ISBP compliance",
+    "International documentation standards",
+    "Enhanced regulatory requirements",
+    "Premium service standards"
+  ]
+}

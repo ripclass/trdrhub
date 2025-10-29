@@ -1,0 +1,47 @@
+{
+  "lc_number": "LC2024-UCP-001",
+  "issue_date": "2024-01-15",
+  "latest_shipment_date": "2024-02-15",
+  "expiry_date": "2024-03-01",
+  "expiry_place": "Dhaka, Bangladesh",
+  "amount": {
+    "value": 100000.00,
+    "currency": "USD"
+  },
+  "applicant": {
+    "name": "ABC Import Company Ltd.",
+    "address": "123 Trade Street, Dhaka-1000, Bangladesh",
+    "country": "Bangladesh"
+  },
+  "beneficiary": {
+    "name": "XYZ Export Industries",
+    "address": "456 Export Avenue, Mumbai-400001, India",
+    "country": "India"
+  },
+  "advising_bank": {
+    "name": "Standard Chartered Bank",
+    "swift_code": "SCBLBDDH",
+    "address": "Motijheel, Dhaka, Bangladesh"
+  },
+  "presentation_period": "Documents must be presented within 21 days after shipment date",
+  "partial_shipments": "Allowed",
+  "transshipment": "Allowed",
+  "required_documents": [
+    "Commercial Invoice in triplicate",
+    "Packing List",
+    "Bill of Lading marked freight prepaid",
+    "Certificate of Origin issued by DCCI",
+    "Insurance Certificate"
+  ],
+  "certificate_requirements": "Certificate of Origin must be issued and signed by Dhaka Chamber of Commerce & Industry (DCCI)",
+  "description_of_goods": "Ready Made Garments (RMG) - Cotton T-shirts as per proforma invoice PI-2024-001",
+  "port_of_loading": "Chittagong Port, Bangladesh",
+  "port_of_discharge": "Mumbai Port, India",
+  "incoterms": "FOB Chittagong",
+  "payment_terms": "At sight",
+  "_test_metadata": {
+    "purpose": "Fully compliant UCP600 credit for positive testing",
+    "expected_violations": 0,
+    "should_pass_all_ucp600_rules": true
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "LCopilot", "LCopilotErrorCount-{env}", { "stat": "Sum" } ],
+          [ ".", ".", { "stat": "Average" } ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "{region}",
+        "title": "Error Rate - {env_title}",
+        "period": 60,
+        "yAxis": {
+          "left": {
+            "min": 0
+          }
+        },
+        "annotations": {
+          "horizontal": [
+            {
+              "value": {alarm_threshold},
+              "label": "Alarm Threshold",
+              "fill": "above"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "LCopilot", "LCopilotErrorCount-{env}", { "stat": "Sum", "period": 300 } ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "{region}",
+        "title": "Error Rate (5-min) - {env_title}",
+        "period": 300,
+        "yAxis": {
+          "left": {
+            "min": 0
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "x": 0,
+      "y": 6,
+      "width": 24,
+      "height": 2,
+      "properties": {
+        "markdown": "## Alarm Status Dashboard - {env_title}\n\n**Environment:** {env}  \n**Account:** {aws_account_id}  \n**Region:** {region}  \n**Last Updated:** $(date)\n"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 8,
+      "width": 8,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/CloudWatch", "AlarmState", "AlarmName", "lcopilot-error-spike-{env}", { "stat": "Maximum" } ]
+        ],
+        "view": "singleValue",
+        "region": "{region}",
+        "title": "Primary Alarm Status",
+        "period": 300,
+        "stat": "Maximum"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 8,
+      "y": 8,
+      "width": 8,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "LCopilot", "CanarySuccessRate-{env}", { "stat": "Average" } ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "{region}",
+        "title": "Canary Success Rate - {env_title}",
+        "period": 300,
+        "yAxis": {
+          "left": {
+            "min": 0,
+            "max": 100
+          }
+        },
+        "annotations": {
+          "horizontal": [
+            {
+              "value": {canary_success_threshold},
+              "label": "SLO Target",
+              "fill": "below"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "metric",
+      "x": 16,
+      "y": 8,
+      "width": 8,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "LCopilot", "CanaryLatencyMs-{env}", { "stat": "Average" } ],
+          [ ".", ".", { "stat": "p95" } ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "{region}",
+        "title": "Canary Latency - {env_title}",
+        "period": 300,
+        "yAxis": {
+          "left": {
+            "min": 0
+          }
+        }
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 14,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "LCopilot", "AuthFailureCount-{env}", { "stat": "Sum" } ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "{region}",
+        "title": "Authentication Failures - {env_title}",
+        "period": 300,
+        "yAxis": {
+          "left": {
+            "min": 0
+          }
+        },
+        "annotations": {
+          "horizontal": [
+            {
+              "value": {auth_failure_threshold},
+              "label": "Alert Threshold",
+              "fill": "above"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "log",
+      "x": 12,
+      "y": 14,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "query": "SOURCE '/aws/lambda/lcopilot-{env}' | fields @timestamp, level, message\\n| filter level = \"ERROR\"\\n| stats count() as error_count by message\\n| sort error_count desc\\n| limit 10",
+        "region": "{region}",
+        "title": "Top Error Types - {env_title}",
+        "view": "table"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 20,
+      "width": 8,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "LCopilot", "ResponseTimeP50-{env}", { "stat": "Average" } ],
+          [ ".", "ResponseTimeP95-{env}", { "stat": "Average" } ]
+        ],
+        "view": "timeSeries",
+        "stacked": false,
+        "region": "{region}",
+        "title": "Response Time Percentiles - {env_title}",
+        "period": 300,
+        "yAxis": {
+          "left": {
+            "min": 0
+          }
+        },
+        "annotations": {
+          "horizontal": [
+            {
+              "value": {p95_latency_target_ms},
+              "label": "P95 SLO Target",
+              "fill": "above"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "metric",
+      "x": 8,
+      "y": 20,
+      "width": 8,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "LCopilot", "SystemAvailability-{env}", { "stat": "Average" } ]
+        ],
+        "view": "singleValue",
+        "region": "{region}",
+        "title": "System Availability %",
+        "period": 3600,
+        "stat": "Average"
+      }
+    },
+    {
+      "type": "log",
+      "x": 16,
+      "y": 20,
+      "width": 8,
+      "height": 6,
+      "properties": {
+        "query": "SOURCE '/aws/lambda/lcopilot-{env}' | fields @timestamp, event, ip_address, country_code\\n| filter event like /auth_failed|suspicious|blocked/\\n| stats count() as event_count by event, country_code\\n| sort event_count desc\\n| limit 15",
+        "region": "{region}",
+        "title": "Security Events - {env_title}",
+        "view": "table"
+      }
+    }
+  ]
+}

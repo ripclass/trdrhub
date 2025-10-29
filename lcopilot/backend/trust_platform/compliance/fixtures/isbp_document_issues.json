@@ -1,0 +1,55 @@
+{
+  "lc_number": "LC2024-ISBP-001",
+  "issue_date": "2024-01-15",
+  "latest_shipment_date": "2024-02-15",
+  "expiry_date": "2024-03-01",
+  "expiry_place": "Singapore",
+  "amount": {
+    "value": 120000.00,
+    "currency": "USD"
+  },
+  "applicant": {
+    "name": "ASIA IMPORT PTE LTD",
+    "address": "Singapore Business Park",
+    "country": "Singapore"
+  },
+  "beneficiary": {
+    "name": "global export inc.",
+    "address": "export street, thailand",
+    "country": "Thailand"
+  },
+  "required_documents": [
+    "Commercial Invoice",
+    "Bill of Lading",
+    "Insurance Certificate"
+  ],
+  "presentation_period": "21 days after shipment date",
+  "description_of_goods": "Industrial Equipment as per purchase order PO-2024-001",
+  "port_of_loading": "Bangkok Port",
+  "port_of_discharge": "Singapore Port",
+  "_documents_presented": {
+    "commercial_invoice": {
+      "invoice_amount": 121000.00,
+      "currency": "USD",
+      "beneficiary_name": "Global Export Inc",
+      "description": "Industrial Equipment - Various Models"
+    },
+    "bill_of_lading": {
+      "consignee": "Asia Import Pte Ltd",
+      "shipper": "global export inc."
+    }
+  },
+  "_test_metadata": {
+    "purpose": "ISBP document examination issues",
+    "expected_violations": [
+      "ISBP-A01",
+      "ISBP-A02",
+      "ISBP-A06"
+    ],
+    "issues": [
+      "Party name inconsistencies (case mismatch)",
+      "Invoice amount exceeds LC amount",
+      "Description variations between LC and documents"
+    ]
+  }
+}
