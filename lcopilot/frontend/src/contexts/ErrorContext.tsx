@@ -1,9 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react'
+import { createContext, useContext, useState, type ReactNode } from 'react'
 
 interface ErrorContextType {
   error: string | null
   setError: (error: string | null) => void
   clearError: () => void
+  showError: (error: string) => void
 }
 
 const ErrorContext = createContext<ErrorContextType | undefined>(undefined)
@@ -12,9 +13,10 @@ export function ErrorProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null)
 
   const clearError = () => setError(null)
+  const showError = (error: string) => setError(error)
 
   return (
-    <ErrorContext.Provider value={{ error, setError, clearError }}>
+    <ErrorContext.Provider value={{ error, setError, clearError, showError }}>
       {children}
     </ErrorContext.Provider>
   )
