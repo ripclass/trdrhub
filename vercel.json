@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "framework": "vite",
   "buildCommand": "cd lcopilot/frontend && npm install && npm run build",
   "outputDirectory": "lcopilot/frontend/dist",
   "rewrites": [
