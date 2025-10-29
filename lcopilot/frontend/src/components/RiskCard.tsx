@@ -12,7 +12,7 @@ interface BusinessImpact {
   timeline?: string;
 }
 
-interface Risk {
+export interface Risk {
   id: string;
   title: string;
   description: string;

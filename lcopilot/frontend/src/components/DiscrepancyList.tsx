@@ -10,7 +10,7 @@ import {
   Filter,
   ChevronDown
 } from 'lucide-react'
-import { DiscrepancyInfo } from '../api/sessions'
+import type { DiscrepancyInfo } from '../api/sessions'
 
 interface DiscrepancyListProps {
   discrepancies: DiscrepancyInfo[]

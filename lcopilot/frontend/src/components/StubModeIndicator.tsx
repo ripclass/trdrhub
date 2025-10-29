@@ -1,7 +1,6 @@
-import React from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { Settings, TestTube } from 'lucide-react'
-import { getStubStatus, StubStatus } from '../api/sessions'
+import { TestTube } from 'lucide-react'
+import { getStubStatus, type StubStatus } from '../api/sessions'
 
 export default function StubModeIndicator() {
   const { data: stubStatus } = useQuery<StubStatus>({
@@ -80,7 +79,7 @@ export default function StubModeIndicator() {
           </div>
         </div>
       )}
-      <style jsx>{`
+      <style>{`
         .stub-tooltip-parent:hover .stub-tooltip {
           opacity: 1;
           pointer-events: auto;

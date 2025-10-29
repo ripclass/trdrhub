@@ -1,5 +1,5 @@
 import DiscrepancyList from './DiscrepancyList'
-import { DiscrepancyInfo } from '../api/sessions'
+import type { DiscrepancyInfo } from '../api/sessions'
 
 // Sample discrepancy data for testing different scenarios
 const sampleDiscrepancies: DiscrepancyInfo[] = [

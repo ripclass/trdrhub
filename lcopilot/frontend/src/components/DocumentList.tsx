@@ -65,7 +65,7 @@ const DocumentList: React.FC<DocumentListProps> = ({
     }
   };
 
-  const getDocumentTypeIcon = (type: DocumentType) => {
+  const getDocumentTypeIcon = (_type: DocumentType) => {
     return <FileText size={20} className="text-gray-600" />;
   };
 
